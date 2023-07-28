@@ -1,0 +1,21 @@
+1.-Comprobaciones:
+------------------------------------------------------------------------------------
+
+Si escribo texto nuevo:
+        - y le doy a guardar me sale cuadro de guardar como
+	- y le doy a guardar como me sale cuadro de guardar como igual
+	- si le doy a abrir en el cuadro de abrir en el texto abajo me aparece ya escrito el texto openFileDialog1*********************NO TIENE QUE APARECER *********
+
+Si tengo archivo guardado con nombre Predefinido "nuevoTexto.txt" y lo modifico:
+	-y le doy a guardar, se guarda correctamente
+
+Si tengo archivo y quiero guardar como un nombre nuevo, se guarda el archivo pero no se guarda el contenido interior.
+
+
+
+------------------------------------------------------------------------------------
+				CAMBIOS A REALIZAR
+------------------------------------------------------------------------------------
+-COMPROBAR GUARDAR Y GUARDAR COMO EN TODAS LAS SITUACIONES
+-CUANDO CIERRO EL PROGRAMA NO COMPRUEBA SI ESTAN LOS CAMBIOS GUARDADOS PARA MOSTRAR UN CUADRO DE DIALOGO CON 3 OPCIONES O MOSTRAR OTRO O CERRAR DIRECTAMENTE.
+
