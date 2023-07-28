@@ -63,6 +63,7 @@ namespace BlocNotasWF
             this.seleccionarTodoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pageSetupDialog1 = new System.Windows.Forms.PageSetupDialog();
             this.configurarPáginaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripStatusLabelCodification = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -75,7 +76,7 @@ namespace BlocNotasWF
             this.verToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(310, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(324, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -239,7 +240,7 @@ namespace BlocNotasWF
             this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.richTextBox1.Location = new System.Drawing.Point(0, 24);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(310, 287);
+            this.richTextBox1.Size = new System.Drawing.Size(324, 287);
             this.richTextBox1.TabIndex = 1;
             this.richTextBox1.Text = "";
             // 
@@ -249,23 +250,27 @@ namespace BlocNotasWF
             // 
             // statusStrip1
             // 
+            this.statusStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 80, 2);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
-            this.toolStripStatusLabelZoom});
+            this.toolStripStatusLabelZoom,
+            this.toolStripStatusLabelCodification});
             this.statusStrip1.Location = new System.Drawing.Point(0, 289);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(310, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(324, 22);
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // toolStripStatusLabel1
             // 
+            this.toolStripStatusLabel1.Margin = new System.Windows.Forms.Padding(0, 3, 20, 2);
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(63, 17);
             this.toolStripStatusLabel1.Text = "Palabras: 0";
             // 
             // toolStripStatusLabelZoom
             // 
+            this.toolStripStatusLabelZoom.Margin = new System.Windows.Forms.Padding(0, 3, 20, 2);
             this.toolStripStatusLabelZoom.Name = "toolStripStatusLabelZoom";
             this.toolStripStatusLabelZoom.Size = new System.Drawing.Size(73, 17);
             this.toolStripStatusLabelZoom.Text = "Zoom: 100%";
@@ -295,17 +300,23 @@ namespace BlocNotasWF
             this.configurarPáginaToolStripMenuItem.Text = "Configurar página";
             this.configurarPáginaToolStripMenuItem.Click += new System.EventHandler(this.configurarPáginaToolStripMenuItem_Click);
             // 
+            // toolStripStatusLabelCodification
+            // 
+            this.toolStripStatusLabelCodification.Name = "toolStripStatusLabelCodification";
+            this.toolStripStatusLabelCodification.Size = new System.Drawing.Size(77, 17);
+            this.toolStripStatusLabelCodification.Text = "Codificacion:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(310, 311);
+            this.ClientSize = new System.Drawing.Size(324, 311);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.MinimumSize = new System.Drawing.Size(300, 150);
+            this.MinimumSize = new System.Drawing.Size(340, 150);
             this.Name = "Form1";
             this.Text = "Bloc de notas";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
@@ -354,6 +365,7 @@ namespace BlocNotasWF
         private System.Windows.Forms.ToolStripMenuItem seleccionarTodoToolStripMenuItem;
         private System.Windows.Forms.PageSetupDialog pageSetupDialog1;
         private System.Windows.Forms.ToolStripMenuItem configurarPáginaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelCodification;
     }
 }
 

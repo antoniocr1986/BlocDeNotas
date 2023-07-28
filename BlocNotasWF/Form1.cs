@@ -20,18 +20,86 @@ namespace BlocNotasWF
         {
             InitializeComponent();
 
+            //CODIGO PARA AÑADIR EVENTO AL CAMBIAR EL TEXTO DEL RICHTEXTBOX
             richTextBox1.TextChanged += RichTextBox1_TextChanged;
 
+
+            //CODIGO PARA ARCHIVO-CONFIGURAR PAGINA
             // Crear el objeto PageSetupDialog
             pageSetupDialog1 = new PageSetupDialog();
-
             // Asociar el PageSetupDialog al RichTextBox para obtener sus propiedades de impresión
             pageSetupDialog1.Document = new System.Drawing.Printing.PrintDocument();
             pageSetupDialog1.Document.DefaultPageSettings = new System.Drawing.Printing.PageSettings();
-
             // Opcional: Puedes establecer otras opciones predeterminadas para el PageSetupDialog
             pageSetupDialog1.EnableMetric = true; // Para usar medidas métricas (milímetros) en lugar de pulgadas
+
+            //CODIGO PARA MOSTRAR CODIFICACION EN BARRA DE ESTADO
+
+            // Suscribirse al evento TextChanged del RichTextBox
+            richTextBox1.TextChanged += (sender, e) =>
+            {
+                // Obtener el texto actual del RichTextBox
+                string text = richTextBox1.Text;
+
+                // Intentar determinar la codificación del texto
+                Encoding encoding = TryDetectEncoding(text);
+
+                // Actualizar el texto del ToolStripStatusLabel con la codificación detectada
+                if (encoding != null)
+                {
+                    toolStripStatusLabelCodification.Text = "Codificación: " + encoding.EncodingName;
+                }
+                else
+                {
+                    toolStripStatusLabelCodification.Text = "Codificación: No se pudo determinar";
+                }
+            };
         }
+
+        private Encoding TryDetectEncoding(string text)
+        {
+            Encoding[] encodings = new Encoding[]
+            {
+            Encoding.UTF8,
+            Encoding.Unicode, // UTF-16 Little Endian
+            Encoding.BigEndianUnicode, // UTF-16 Big Endian
+            Encoding.ASCII,
+            Encoding.GetEncoding("ISO-8859-1") // Latin-1
+                                               // Agregar más codificaciones si es necesario
+            };
+
+            foreach (Encoding encoding in encodings)
+            {
+                byte[] bytes = encoding.GetPreamble();
+                if (bytes.Length <= text.Length)
+                {
+                    string preambleText = text.Substring(0, bytes.Length);
+                    byte[] preambleBytes = encoding.GetBytes(preambleText);
+                    if (ArrayEquals(bytes, preambleBytes))
+                    {
+                        return encoding;
+                    }
+                }
+            }
+
+            return null; // No se pudo determinar la codificación
+        }
+
+        // Método auxiliar para comparar dos arreglos de bytes
+        private bool ArrayEquals(byte[] arr1, byte[] arr2)
+        {
+            if (arr1.Length != arr2.Length)
+                return false;
+
+            for (int i = 0; i < arr1.Length; i++)
+            {
+                if (arr1[i] != arr2[i])
+                    return false;
+            }
+
+            return true;
+        }
+
 
         private void abrirToolStripMenuItem_Click(object sender, EventArgs e)
         {
