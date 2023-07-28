@@ -220,5 +220,30 @@ namespace BlocNotasWF
 
             richTextBox1.Text = fechaHoraString +"\n" +richTextBox1.Text;
         }
+
+        private void buscarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2();
+
+            form2.ShowDialog();
+
+            string textoBuscado = form2.GetTextBoxData();
+
+            if (!string.IsNullOrWhiteSpace(textoBuscado))
+            {
+                int index = 0;
+                int lastIndex = richTextBox1.TextLength;
+
+                while (index < lastIndex)
+                {
+                    index = richTextBox1.Find(textoBuscado, index, lastIndex, RichTextBoxFinds.None);
+                    if (index == -1)
+                        break;
+
+                    richTextBox1.SelectionBackColor = Color.Yellow;
+                    index += textoBuscado.Length;
+                }
+            }
+        }
     }
 }

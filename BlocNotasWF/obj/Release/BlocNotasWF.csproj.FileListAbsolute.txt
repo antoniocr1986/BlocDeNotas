@@ -1,0 +1,11 @@
+C:\Users\anton\source\repos\BlocNotasWF\BlocNotasWF\bin\Release\BlocNotasWF.exe.config
+C:\Users\anton\source\repos\BlocNotasWF\BlocNotasWF\bin\Release\BlocNotasWF.exe
+C:\Users\anton\source\repos\BlocNotasWF\BlocNotasWF\bin\Release\BlocNotasWF.pdb
+C:\Users\anton\source\repos\BlocNotasWF\BlocNotasWF\obj\Release\BlocNotasWF.Form1.resources
+C:\Users\anton\source\repos\BlocNotasWF\BlocNotasWF\obj\Release\BlocNotasWF.Properties.Resources.resources
+C:\Users\anton\source\repos\BlocNotasWF\BlocNotasWF\obj\Release\BlocNotasWF.csproj.GenerateResource.cache
+C:\Users\anton\source\repos\BlocNotasWF\BlocNotasWF\obj\Release\BlocNotasWF.csproj.CoreCompileInputs.cache
+C:\Users\anton\source\repos\BlocNotasWF\BlocNotasWF\obj\Release\BlocNotasWF.exe
+C:\Users\anton\source\repos\BlocNotasWF\BlocNotasWF\obj\Release\BlocNotasWF.pdb
+C:\Users\anton\source\repos\BlocNotasWF\BlocNotasWF\obj\Release\BlocNotasWF.csproj.AssemblyReference.cache
+C:\Users\anton\source\repos\BlocNotasWF\BlocNotasWF\obj\Release\BlocNotasWF.Form2.resources
