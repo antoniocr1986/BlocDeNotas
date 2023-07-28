@@ -194,5 +194,23 @@ namespace BlocNotasWF
             int valor = Convert.ToInt32(richTextBox1.ZoomFactor * 100);
             toolStripStatusLabelZoom.Text = "Zoom: " + valor + " %";
         }
+
+        private void cortarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Cut();
+        }
+
+        private void copiarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Copy();
+        }
+
+        private void pegarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Clipboard.ContainsText())
+            {
+                richTextBox1.Paste();
+            }
+        }
     }
 }
