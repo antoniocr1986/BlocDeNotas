@@ -59,6 +59,7 @@ namespace BlocNotasWF
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabelZoom = new System.Windows.Forms.ToolStripStatusLabel();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
+            this.restablecerZoomOriginalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -91,35 +92,35 @@ namespace BlocNotasWF
             // abrirToolStripMenuItem
             // 
             this.abrirToolStripMenuItem.Name = "abrirToolStripMenuItem";
-            this.abrirToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.abrirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.abrirToolStripMenuItem.Text = "Abrir";
             this.abrirToolStripMenuItem.Click += new System.EventHandler(this.abrirToolStripMenuItem_Click);
             // 
             // guardarToolStripMenuItem
             // 
             this.guardarToolStripMenuItem.Name = "guardarToolStripMenuItem";
-            this.guardarToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.guardarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.guardarToolStripMenuItem.Text = "Guardar";
             this.guardarToolStripMenuItem.Click += new System.EventHandler(this.guardarToolStripMenuItem_Click);
             // 
             // guardarComoToolStripMenuItem
             // 
             this.guardarComoToolStripMenuItem.Name = "guardarComoToolStripMenuItem";
-            this.guardarComoToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.guardarComoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.guardarComoToolStripMenuItem.Text = "Guardar como...";
             this.guardarComoToolStripMenuItem.Click += new System.EventHandler(this.guardarComoToolStripMenuItem_Click);
             // 
             // imprimirToolStripMenuItem
             // 
             this.imprimirToolStripMenuItem.Name = "imprimirToolStripMenuItem";
-            this.imprimirToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.imprimirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.imprimirToolStripMenuItem.Text = "Imprimir";
             this.imprimirToolStripMenuItem.Click += new System.EventHandler(this.imprimirToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -140,49 +141,49 @@ namespace BlocNotasWF
             // cortarToolStripMenuItem
             // 
             this.cortarToolStripMenuItem.Name = "cortarToolStripMenuItem";
-            this.cortarToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.cortarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cortarToolStripMenuItem.Text = "Cortar";
             this.cortarToolStripMenuItem.Click += new System.EventHandler(this.cortarToolStripMenuItem_Click);
             // 
             // copiarToolStripMenuItem
             // 
             this.copiarToolStripMenuItem.Name = "copiarToolStripMenuItem";
-            this.copiarToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.copiarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.copiarToolStripMenuItem.Text = "Copiar";
             this.copiarToolStripMenuItem.Click += new System.EventHandler(this.copiarToolStripMenuItem_Click);
             // 
             // pegarToolStripMenuItem
             // 
             this.pegarToolStripMenuItem.Name = "pegarToolStripMenuItem";
-            this.pegarToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.pegarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.pegarToolStripMenuItem.Text = "Pegar";
             this.pegarToolStripMenuItem.Click += new System.EventHandler(this.pegarToolStripMenuItem_Click);
             // 
             // buscarToolStripMenuItem
             // 
             this.buscarToolStripMenuItem.Name = "buscarToolStripMenuItem";
-            this.buscarToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.buscarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.buscarToolStripMenuItem.Text = "Buscar";
             this.buscarToolStripMenuItem.Click += new System.EventHandler(this.buscarToolStripMenuItem_Click);
             // 
             // fechaYHoraToolStripMenuItem
             // 
             this.fechaYHoraToolStripMenuItem.Name = "fechaYHoraToolStripMenuItem";
-            this.fechaYHoraToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.fechaYHoraToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.fechaYHoraToolStripMenuItem.Text = "Fecha y hora";
             this.fechaYHoraToolStripMenuItem.Click += new System.EventHandler(this.fechaYHoraToolStripMenuItem_Click);
             // 
             // formatoToolStripMenuItem1
             // 
             this.formatoToolStripMenuItem1.Name = "formatoToolStripMenuItem1";
-            this.formatoToolStripMenuItem1.Size = new System.Drawing.Size(141, 22);
-            this.formatoToolStripMenuItem1.Text = "Formato";
+            this.formatoToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.formatoToolStripMenuItem1.Text = "Fuente";
             this.formatoToolStripMenuItem1.Click += new System.EventHandler(this.formatoToolStripMenuItem1_Click);
             // 
             // colorToolStripMenuItem1
             // 
             this.colorToolStripMenuItem1.Name = "colorToolStripMenuItem1";
-            this.colorToolStripMenuItem1.Size = new System.Drawing.Size(141, 22);
+            this.colorToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.colorToolStripMenuItem1.Text = "Color";
             this.colorToolStripMenuItem1.Click += new System.EventHandler(this.colorToolStripMenuItem1_Click);
             // 
@@ -199,22 +200,23 @@ namespace BlocNotasWF
             // 
             this.zoomToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aumentarToolStripMenuItem,
-            this.reducirToolStripMenuItem});
+            this.reducirToolStripMenuItem,
+            this.restablecerZoomOriginalToolStripMenuItem});
             this.zoomToolStripMenuItem.Name = "zoomToolStripMenuItem";
-            this.zoomToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.zoomToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.zoomToolStripMenuItem.Text = "Zoom";
             // 
             // aumentarToolStripMenuItem
             // 
             this.aumentarToolStripMenuItem.Name = "aumentarToolStripMenuItem";
-            this.aumentarToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.aumentarToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
             this.aumentarToolStripMenuItem.Text = "Aumentar";
             this.aumentarToolStripMenuItem.Click += new System.EventHandler(this.aumentarToolStripMenuItem_Click);
             // 
             // reducirToolStripMenuItem
             // 
             this.reducirToolStripMenuItem.Name = "reducirToolStripMenuItem";
-            this.reducirToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.reducirToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
             this.reducirToolStripMenuItem.Text = "Reducir";
             this.reducirToolStripMenuItem.Click += new System.EventHandler(this.reducirToolStripMenuItem_Click);
             // 
@@ -223,7 +225,7 @@ namespace BlocNotasWF
             this.barraDeEstadoToolStripMenuItem.Checked = true;
             this.barraDeEstadoToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.barraDeEstadoToolStripMenuItem.Name = "barraDeEstadoToolStripMenuItem";
-            this.barraDeEstadoToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.barraDeEstadoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.barraDeEstadoToolStripMenuItem.Text = "Barra de estado";
             this.barraDeEstadoToolStripMenuItem.Click += new System.EventHandler(this.barraDeEstadoToolStripMenuItem_Click);
             // 
@@ -267,6 +269,13 @@ namespace BlocNotasWF
             // 
             this.printDialog1.UseEXDialog = true;
             // 
+            // restablecerZoomOriginalToolStripMenuItem
+            // 
+            this.restablecerZoomOriginalToolStripMenuItem.Name = "restablecerZoomOriginalToolStripMenuItem";
+            this.restablecerZoomOriginalToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
+            this.restablecerZoomOriginalToolStripMenuItem.Text = "Restablecer zoom original";
+            this.restablecerZoomOriginalToolStripMenuItem.Click += new System.EventHandler(this.restablecerZoomOriginalToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -286,7 +295,6 @@ namespace BlocNotasWF
             this.menuStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -323,6 +331,7 @@ namespace BlocNotasWF
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelZoom;
         private System.Windows.Forms.ToolStripMenuItem imprimirToolStripMenuItem;
         private System.Windows.Forms.PrintDialog printDialog1;
+        private System.Windows.Forms.ToolStripMenuItem restablecerZoomOriginalToolStripMenuItem;
     }
 }
 

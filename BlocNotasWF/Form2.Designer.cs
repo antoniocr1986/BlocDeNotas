@@ -29,6 +29,7 @@ namespace BlocNotasWF
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.textBoxBuscar = new System.Windows.Forms.TextBox();
             this.buttonBuscar = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -57,6 +58,7 @@ namespace BlocNotasWF
             this.ClientSize = new System.Drawing.Size(264, 101);
             this.Controls.Add(this.buttonBuscar);
             this.Controls.Add(this.textBoxBuscar);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(280, 140);
             this.MinimumSize = new System.Drawing.Size(280, 140);
             this.Name = "Form2";

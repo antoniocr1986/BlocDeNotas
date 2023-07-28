@@ -193,6 +193,12 @@ namespace BlocNotasWF
             ZoomStatusLabel_Changed(sender, e);
         }
 
+        private void restablecerZoomOriginalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox1.ZoomFactor = 1;
+            ZoomStatusLabel_Changed(sender, e);
+        }
+
         private void ZoomStatusLabel_Changed(object sender, EventArgs e)
         {
             int valor = Convert.ToInt32(richTextBox1.ZoomFactor * 100);
@@ -279,5 +285,7 @@ namespace BlocNotasWF
             RectangleF bounds = e.MarginBounds;
             e.Graphics.DrawString(textToPrint, font, brush, bounds, StringFormat.GenericTypographic);
         }
+
+        
     }
 }
