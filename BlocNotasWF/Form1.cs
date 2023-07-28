@@ -286,6 +286,9 @@ namespace BlocNotasWF
             e.Graphics.DrawString(textToPrint, font, brush, bounds, StringFormat.GenericTypographic);
         }
 
-        
+        private void seleccionarTodoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox1.SelectAll();
+        }
     }
 }

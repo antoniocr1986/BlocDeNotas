@@ -60,6 +60,7 @@ namespace BlocNotasWF
             this.toolStripStatusLabelZoom = new System.Windows.Forms.ToolStripStatusLabel();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.restablecerZoomOriginalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.seleccionarTodoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -131,6 +132,7 @@ namespace BlocNotasWF
             this.copiarToolStripMenuItem,
             this.pegarToolStripMenuItem,
             this.buscarToolStripMenuItem,
+            this.seleccionarTodoToolStripMenuItem,
             this.fechaYHoraToolStripMenuItem,
             this.formatoToolStripMenuItem1,
             this.colorToolStripMenuItem1});
@@ -276,6 +278,13 @@ namespace BlocNotasWF
             this.restablecerZoomOriginalToolStripMenuItem.Text = "Restablecer zoom original";
             this.restablecerZoomOriginalToolStripMenuItem.Click += new System.EventHandler(this.restablecerZoomOriginalToolStripMenuItem_Click);
             // 
+            // seleccionarTodoToolStripMenuItem
+            // 
+            this.seleccionarTodoToolStripMenuItem.Name = "seleccionarTodoToolStripMenuItem";
+            this.seleccionarTodoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.seleccionarTodoToolStripMenuItem.Text = "Seleccionar todo";
+            this.seleccionarTodoToolStripMenuItem.Click += new System.EventHandler(this.seleccionarTodoToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -332,6 +341,7 @@ namespace BlocNotasWF
         private System.Windows.Forms.ToolStripMenuItem imprimirToolStripMenuItem;
         private System.Windows.Forms.PrintDialog printDialog1;
         private System.Windows.Forms.ToolStripMenuItem restablecerZoomOriginalToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem seleccionarTodoToolStripMenuItem;
     }
 }
 
