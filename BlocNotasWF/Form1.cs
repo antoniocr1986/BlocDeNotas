@@ -175,5 +175,24 @@ namespace BlocNotasWF
             int wordCount = richTextBox1.Text.Split(new char[] { ' ', '\t', '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries).Length;
             toolStripStatusLabel1.Text = "Palabras: " + wordCount;
         }
+
+        private void aumentarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox1.ZoomFactor = richTextBox1.ZoomFactor+0.2F;
+            ZoomStatusLabel_Changed(sender, e);
+
+        }
+
+        private void reducirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox1.ZoomFactor = richTextBox1.ZoomFactor- 0.2F;
+            ZoomStatusLabel_Changed(sender, e);
+        }
+
+        private void ZoomStatusLabel_Changed(object sender, EventArgs e)
+        {
+            int valor = Convert.ToInt32(richTextBox1.ZoomFactor * 100);
+            toolStripStatusLabelZoom.Text = "Zoom: " + valor + " %";
+        }
     }
 }

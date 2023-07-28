@@ -45,6 +45,8 @@ namespace BlocNotasWF
             this.colorToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.verToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zoomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aumentarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reducirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.barraDeEstadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
@@ -53,6 +55,7 @@ namespace BlocNotasWF
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabelZoom = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -178,14 +181,31 @@ namespace BlocNotasWF
             // 
             // zoomToolStripMenuItem
             // 
+            this.zoomToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aumentarToolStripMenuItem,
+            this.reducirToolStripMenuItem});
             this.zoomToolStripMenuItem.Name = "zoomToolStripMenuItem";
-            this.zoomToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.zoomToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.zoomToolStripMenuItem.Text = "Zoom";
+            // 
+            // aumentarToolStripMenuItem
+            // 
+            this.aumentarToolStripMenuItem.Name = "aumentarToolStripMenuItem";
+            this.aumentarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aumentarToolStripMenuItem.Text = "Aumentar";
+            this.aumentarToolStripMenuItem.Click += new System.EventHandler(this.aumentarToolStripMenuItem_Click);
+            // 
+            // reducirToolStripMenuItem
+            // 
+            this.reducirToolStripMenuItem.Name = "reducirToolStripMenuItem";
+            this.reducirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.reducirToolStripMenuItem.Text = "Reducir";
+            this.reducirToolStripMenuItem.Click += new System.EventHandler(this.reducirToolStripMenuItem_Click);
             // 
             // barraDeEstadoToolStripMenuItem
             // 
             this.barraDeEstadoToolStripMenuItem.Name = "barraDeEstadoToolStripMenuItem";
-            this.barraDeEstadoToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.barraDeEstadoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.barraDeEstadoToolStripMenuItem.Text = "Barra de estado";
             this.barraDeEstadoToolStripMenuItem.Click += new System.EventHandler(this.barraDeEstadoToolStripMenuItem_Click);
             // 
@@ -205,7 +225,8 @@ namespace BlocNotasWF
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1});
+            this.toolStripStatusLabel1,
+            this.toolStripStatusLabelZoom});
             this.statusStrip1.Location = new System.Drawing.Point(0, 289);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(310, 22);
@@ -215,8 +236,14 @@ namespace BlocNotasWF
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(54, 17);
-            this.toolStripStatusLabel1.Text = "Palabras:";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(63, 17);
+            this.toolStripStatusLabel1.Text = "Palabras: 0";
+            // 
+            // toolStripStatusLabelZoom
+            // 
+            this.toolStripStatusLabelZoom.Name = "toolStripStatusLabelZoom";
+            this.toolStripStatusLabelZoom.Size = new System.Drawing.Size(73, 17);
+            this.toolStripStatusLabelZoom.Text = "Zoom: 100%";
             // 
             // Form1
             // 
@@ -267,6 +294,9 @@ namespace BlocNotasWF
         private System.Windows.Forms.ToolStripMenuItem barraDeEstadoToolStripMenuItem;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripMenuItem aumentarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reducirToolStripMenuItem;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelZoom;
     }
 }
 
