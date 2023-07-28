@@ -158,6 +158,7 @@ namespace BlocNotasWF
             this.fechaYHoraToolStripMenuItem.Name = "fechaYHoraToolStripMenuItem";
             this.fechaYHoraToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.fechaYHoraToolStripMenuItem.Text = "Fecha y hora";
+            this.fechaYHoraToolStripMenuItem.Click += new System.EventHandler(this.fechaYHoraToolStripMenuItem_Click);
             // 
             // formatoToolStripMenuItem1
             // 

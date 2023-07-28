@@ -212,5 +212,13 @@ namespace BlocNotasWF
                 richTextBox1.Paste();
             }
         }
+
+        private void fechaYHoraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DateTime fechaHoraActual = DateTime.Now;
+            string fechaHoraString = fechaHoraActual.ToString("yyyy-MM-dd HH:mm:ss");
+
+            richTextBox1.Text = fechaHoraString +"\n" +richTextBox1.Text;
+        }
     }
 }
