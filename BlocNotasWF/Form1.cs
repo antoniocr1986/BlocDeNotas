@@ -257,8 +257,10 @@ namespace BlocNotasWF
 
             if (result == DialogResult.OK)
             {
-                // Iniciar el proceso de impresión
-                //printDocument1.Print();
+                PrintDocument printDocument = new PrintDocument();
+                printDocument.PrintPage += new PrintPageEventHandler(PrintText);
+                printDocument.PrinterSettings = printDialog1.PrinterSettings;
+                printDocument.Print();
             }
         }
 
@@ -267,54 +269,15 @@ namespace BlocNotasWF
 
         }
 
-        /*private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
+        private void PrintText(object sender, PrintPageEventArgs e)
         {
-            // Configurar los márgenes de impresión
-            float leftMargin = e.MarginBounds.Left;
-            float topMargin = e.MarginBounds.Top;
+            string textToPrint = richTextBox1.Text;
 
-            // Obtener el tamaño del área de impresión
-            float printAreaHeight = e.MarginBounds.Height;
+            Font font = richTextBox1.Font;
+            Brush brush = new SolidBrush(richTextBox1.ForeColor);
 
-            // Obtener el tamaño del contenido del RichTextBox
-            SizeF textSize = e.Graphics.MeasureString(richTextBox1.Text, richTextBox1.Font);
-
-            // Calcular el número de líneas que caben en el área de impresión
-            int numLinesPerPage = (int)(printAreaHeight / textSize.Height);
-
-            // Inicializar el índice de inicio de impresión
-            int startIndex = 0;
-
-            // Calcular el rectángulo que representa el área de impresión
-            RectangleF printArea = new RectangleF(leftMargin, topMargin, e.MarginBounds.Width, printAreaHeight);
-
-            // Imprimir todo el contenido del RichTextBox línea por línea
-            while (startIndex < richTextBox1.Text.Length)
-            {
-                // Obtener el índice de fin de impresión para cada página
-                int endIndex = richTextBox1.Find("\n", startIndex);
-
-                if (endIndex < 0)
-                {
-                    // Si es el último párrafo
-                    endIndex = richTextBox1.Text.Length - 1;
-                }
-
-                // Obtener el texto que se imprimirá en esta página
-                string textToPrint = richTextBox1.Text.Substring(startIndex, endIndex - startIndex + 1);
-
-                // Imprimir el texto en la página actual
-                e.Graphics.DrawString(textToPrint, richTextBox1.Font, Brushes.Black, printArea);
-
-                // Actualizar el índice de inicio para la próxima página
-                startIndex = endIndex + 1;
-
-                // Mover el rectángulo de impresión hacia abajo para la próxima página
-                printArea.Y += textSize.Height;
-            }
-
-            // Indicar que no hay más páginas para imprimir
-            e.HasMorePages = false;
-        }*/
+            RectangleF bounds = e.MarginBounds;
+            e.Graphics.DrawString(textToPrint, font, brush, bounds, StringFormat.GenericTypographic);
+        }
     }
 }
