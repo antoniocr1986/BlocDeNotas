@@ -110,24 +110,6 @@ namespace BlocNotasWF
             }
         }
 
-        private void colorToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var color = colorDialog1.ShowDialog();
-            if (color == DialogResult.OK)
-            {
-                richTextBox1.ForeColor = colorDialog1.Color;
-            }
-        }
-
-        private void formatoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var formato = fontDialog1.ShowDialog();
-            if (formato == DialogResult.OK)
-            {
-                richTextBox1.Font = fontDialog1.Font;
-            }
-        }
-
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -155,6 +137,43 @@ namespace BlocNotasWF
             }
         }
 
-        
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void formatoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            var formato = fontDialog1.ShowDialog();
+            if (formato == DialogResult.OK)
+            {
+                richTextBox1.Font = fontDialog1.Font;
+            }
+        }
+
+        private void colorToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            var color = colorDialog1.ShowDialog();
+            if (color == DialogResult.OK)
+            {
+                richTextBox1.ForeColor = colorDialog1.Color;
+            }
+        }
+
+        private void barraDeEstadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            statusStrip1.Visible = !statusStrip1.Visible;
+        }
+
+        private void RichTextBox1_TextChanged(object sender, EventArgs e)
+        {
+            int wordCount = richTextBox1.Text.Split(new char[] { ' ', '\t', '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries).Length;
+            toolStripStatusLabel1.Text = "Palabras: " + wordCount;
+        }
     }
 }
