@@ -168,6 +168,7 @@ namespace BlocNotasWF
         private void barraDeEstadoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             statusStrip1.Visible = !statusStrip1.Visible;
+            barraDeEstadoToolStripMenuItem.Checked = !barraDeEstadoToolStripMenuItem.Checked;
         }
 
         private void RichTextBox1_TextChanged(object sender, EventArgs e)
