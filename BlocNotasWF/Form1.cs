@@ -13,6 +13,8 @@ namespace BlocNotasWF
 {
     public partial class Form1 : Form
     {
+        string archivoActual ="nuevoArchivo.txt";
+
         public Form1()
         {
             InitializeComponent();
@@ -30,6 +32,7 @@ namespace BlocNotasWF
                 {
                     abrir = file.ReadToEnd();
                     richTextBox1.Text = abrir;
+                    archivoActual = openFileDialog1.FileName;
                 }
                 else
                 {
@@ -44,21 +47,53 @@ namespace BlocNotasWF
 
         private void guardarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            saveFileDialog1.FileName = "nuevoTexto.txt";
-            var save = saveFileDialog1.ShowDialog();
-            if(save == DialogResult.OK)
+            if (archivoActual == "nuevoArchivo.txt")
             {
-                using(var savefile = new System.IO.StreamWriter(saveFileDialog1.FileName))
+                guardarComoToolStripMenuItem_Click(sender, e);
+            }
+            else
+            {
+                GuardarCambiosEnArchivo(archivoActual);
+            }
+            
+        }
+
+        private void GuardarCambiosEnArchivo(string nombreArchivo)
+        {
+            try
+            {
+                using (StreamWriter savefile = new StreamWriter(nombreArchivo))
                 {
-                    GuardarCambiosEnArchivo(saveFileDialog1.FileName);
-                    //savefile.WriteLine(richTextBox1.Text);
+                    savefile.WriteLine(richTextBox1.Text);
+                }
+
+                Console.WriteLine("Cambios guardados correctamente en el archivo: " + nombreArchivo);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error al guardar los cambios: " + ex.Message);
+            }
+        }
+
+        private void guardarComoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            saveFileDialog1.FileName = ".txt";
+            var save = saveFileDialog1.ShowDialog();
+            if (save == DialogResult.OK)
+            {
+                using (var savefile = new System.IO.StreamWriter(saveFileDialog1.FileName))
+                {
+                    GuardarComoCambiosEnArchivo(saveFileDialog1.FileName);
+                    archivoActual = saveFileDialog1.FileName;
+                    savefile.WriteLine(richTextBox1.Text);
                 }
             }
         }
 
-        private void GuardarCambiosEnArchivo(string nombreArchivo = null)
+
+        private void GuardarComoCambiosEnArchivo(string nombreArchivo = null)
         {
-            string nombreArchivoGuardar = "nuevoTexto.txt";
+            string nombreArchivoGuardar = archivoActual;
 
             try
             {
@@ -119,5 +154,7 @@ namespace BlocNotasWF
                 }
             }
         }
+
+        
     }
 }
