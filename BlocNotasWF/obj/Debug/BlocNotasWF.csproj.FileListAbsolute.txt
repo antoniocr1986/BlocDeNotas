@@ -8,3 +8,4 @@ C:\Users\anton\source\repos\BlocNotasWF\BlocNotasWF\bin\Debug\BlocNotasWF.exe
 C:\Users\anton\source\repos\BlocNotasWF\BlocNotasWF\bin\Debug\BlocNotasWF.pdb
 C:\Users\anton\source\repos\BlocNotasWF\BlocNotasWF\obj\Debug\BlocNotasWF.exe
 C:\Users\anton\source\repos\BlocNotasWF\BlocNotasWF\obj\Debug\BlocNotasWF.pdb
+C:\Users\anton\source\repos\BlocNotasWF\BlocNotasWF\obj\Debug\BlocNotasWF.Form2.resources

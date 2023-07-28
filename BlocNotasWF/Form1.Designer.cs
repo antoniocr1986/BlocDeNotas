@@ -29,11 +29,13 @@ namespace BlocNotasWF
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.achivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.abrirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.guardarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.guardarComoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.imprimirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cortarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,6 +58,7 @@ namespace BlocNotasWF
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabelZoom = new System.Windows.Forms.ToolStripStatusLabel();
+            this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -79,6 +82,7 @@ namespace BlocNotasWF
             this.abrirToolStripMenuItem,
             this.guardarToolStripMenuItem,
             this.guardarComoToolStripMenuItem,
+            this.imprimirToolStripMenuItem,
             this.salirToolStripMenuItem});
             this.achivoToolStripMenuItem.Name = "achivoToolStripMenuItem";
             this.achivoToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
@@ -104,6 +108,13 @@ namespace BlocNotasWF
             this.guardarComoToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.guardarComoToolStripMenuItem.Text = "Guardar como...";
             this.guardarComoToolStripMenuItem.Click += new System.EventHandler(this.guardarComoToolStripMenuItem_Click);
+            // 
+            // imprimirToolStripMenuItem
+            // 
+            this.imprimirToolStripMenuItem.Name = "imprimirToolStripMenuItem";
+            this.imprimirToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.imprimirToolStripMenuItem.Text = "Imprimir";
+            this.imprimirToolStripMenuItem.Click += new System.EventHandler(this.imprimirToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 
@@ -190,7 +201,7 @@ namespace BlocNotasWF
             this.aumentarToolStripMenuItem,
             this.reducirToolStripMenuItem});
             this.zoomToolStripMenuItem.Name = "zoomToolStripMenuItem";
-            this.zoomToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.zoomToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.zoomToolStripMenuItem.Text = "Zoom";
             // 
             // aumentarToolStripMenuItem
@@ -212,7 +223,7 @@ namespace BlocNotasWF
             this.barraDeEstadoToolStripMenuItem.Checked = true;
             this.barraDeEstadoToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.barraDeEstadoToolStripMenuItem.Name = "barraDeEstadoToolStripMenuItem";
-            this.barraDeEstadoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.barraDeEstadoToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.barraDeEstadoToolStripMenuItem.Text = "Barra de estado";
             this.barraDeEstadoToolStripMenuItem.Click += new System.EventHandler(this.barraDeEstadoToolStripMenuItem_Click);
             // 
@@ -252,6 +263,10 @@ namespace BlocNotasWF
             this.toolStripStatusLabelZoom.Size = new System.Drawing.Size(73, 17);
             this.toolStripStatusLabelZoom.Text = "Zoom: 100%";
             // 
+            // printDialog1
+            // 
+            this.printDialog1.UseEXDialog = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -260,19 +275,21 @@ namespace BlocNotasWF
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.MinimumSize = new System.Drawing.Size(300, 150);
             this.Name = "Form1";
             this.Text = "Bloc de notas";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+
             this.ResumeLayout(false);
             this.PerformLayout();
 
-            richTextBox1.TextChanged += RichTextBox1_TextChanged;
         }
 
         #endregion
@@ -304,6 +321,8 @@ namespace BlocNotasWF
         private System.Windows.Forms.ToolStripMenuItem aumentarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reducirToolStripMenuItem;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelZoom;
+        private System.Windows.Forms.ToolStripMenuItem imprimirToolStripMenuItem;
+        private System.Windows.Forms.PrintDialog printDialog1;
     }
 }
 
