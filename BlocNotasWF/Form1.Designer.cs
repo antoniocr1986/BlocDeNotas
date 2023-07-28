@@ -61,6 +61,8 @@ namespace BlocNotasWF
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.restablecerZoomOriginalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.seleccionarTodoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pageSetupDialog1 = new System.Windows.Forms.PageSetupDialog();
+            this.configurarPáginaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -84,6 +86,7 @@ namespace BlocNotasWF
             this.abrirToolStripMenuItem,
             this.guardarToolStripMenuItem,
             this.guardarComoToolStripMenuItem,
+            this.configurarPáginaToolStripMenuItem,
             this.imprimirToolStripMenuItem,
             this.salirToolStripMenuItem});
             this.achivoToolStripMenuItem.Name = "achivoToolStripMenuItem";
@@ -285,6 +288,13 @@ namespace BlocNotasWF
             this.seleccionarTodoToolStripMenuItem.Text = "Seleccionar todo";
             this.seleccionarTodoToolStripMenuItem.Click += new System.EventHandler(this.seleccionarTodoToolStripMenuItem_Click);
             // 
+            // configurarPáginaToolStripMenuItem
+            // 
+            this.configurarPáginaToolStripMenuItem.Name = "configurarPáginaToolStripMenuItem";
+            this.configurarPáginaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.configurarPáginaToolStripMenuItem.Text = "Configurar página";
+            this.configurarPáginaToolStripMenuItem.Click += new System.EventHandler(this.configurarPáginaToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -342,6 +352,8 @@ namespace BlocNotasWF
         private System.Windows.Forms.PrintDialog printDialog1;
         private System.Windows.Forms.ToolStripMenuItem restablecerZoomOriginalToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem seleccionarTodoToolStripMenuItem;
+        private System.Windows.Forms.PageSetupDialog pageSetupDialog1;
+        private System.Windows.Forms.ToolStripMenuItem configurarPáginaToolStripMenuItem;
     }
 }
 

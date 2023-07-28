@@ -21,6 +21,16 @@ namespace BlocNotasWF
             InitializeComponent();
 
             richTextBox1.TextChanged += RichTextBox1_TextChanged;
+
+            // Crear el objeto PageSetupDialog
+            pageSetupDialog1 = new PageSetupDialog();
+
+            // Asociar el PageSetupDialog al RichTextBox para obtener sus propiedades de impresión
+            pageSetupDialog1.Document = new System.Drawing.Printing.PrintDocument();
+            pageSetupDialog1.Document.DefaultPageSettings = new System.Drawing.Printing.PageSettings();
+
+            // Opcional: Puedes establecer otras opciones predeterminadas para el PageSetupDialog
+            pageSetupDialog1.EnableMetric = true; // Para usar medidas métricas (milímetros) en lugar de pulgadas
         }
 
         private void abrirToolStripMenuItem_Click(object sender, EventArgs e)
@@ -289,6 +299,20 @@ namespace BlocNotasWF
         private void seleccionarTodoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             richTextBox1.SelectAll();
+        }
+
+        private void configurarPáginaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Mostrar el PageSetupDialog cuando se hace clic en el botón
+            if (pageSetupDialog1.ShowDialog() == DialogResult.OK)
+            {
+                // Si el usuario hace clic en "Aceptar" en el diálogo de configuración de página,
+                // puedes usar las propiedades de PageSettings para personalizar la impresión según las opciones seleccionadas.
+                // Por ejemplo, puedes acceder a la orientación, el tamaño del papel y los márgenes a través de:
+                // pageSetupDialog.Document.DefaultPageSettings.Landscape
+                // pageSetupDialog.Document.DefaultPageSettings.PaperSize
+                // pageSetupDialog.Document.DefaultPageSettings.Margins
+            }
         }
     }
 }
