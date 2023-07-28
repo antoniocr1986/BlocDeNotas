@@ -64,6 +64,10 @@ namespace BlocNotasWF
             this.pageSetupDialog1 = new System.Windows.Forms.PageSetupDialog();
             this.configurarPáginaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripStatusLabelCodification = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -87,8 +91,10 @@ namespace BlocNotasWF
             this.abrirToolStripMenuItem,
             this.guardarToolStripMenuItem,
             this.guardarComoToolStripMenuItem,
+            this.toolStripSeparator3,
             this.configurarPáginaToolStripMenuItem,
             this.imprimirToolStripMenuItem,
+            this.toolStripSeparator4,
             this.salirToolStripMenuItem});
             this.achivoToolStripMenuItem.Name = "achivoToolStripMenuItem";
             this.achivoToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
@@ -135,9 +141,11 @@ namespace BlocNotasWF
             this.cortarToolStripMenuItem,
             this.copiarToolStripMenuItem,
             this.pegarToolStripMenuItem,
+            this.toolStripSeparator1,
             this.buscarToolStripMenuItem,
             this.seleccionarTodoToolStripMenuItem,
             this.fechaYHoraToolStripMenuItem,
+            this.toolStripSeparator2,
             this.formatoToolStripMenuItem1,
             this.colorToolStripMenuItem1});
             this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
@@ -306,6 +314,26 @@ namespace BlocNotasWF
             this.toolStripStatusLabelCodification.Size = new System.Drawing.Size(77, 17);
             this.toolStripStatusLabelCodification.Text = "Codificacion:";
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(177, 6);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(177, 6);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -366,6 +394,10 @@ namespace BlocNotasWF
         private System.Windows.Forms.PageSetupDialog pageSetupDialog1;
         private System.Windows.Forms.ToolStripMenuItem configurarPáginaToolStripMenuItem;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelCodification;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
     }
 }
 
