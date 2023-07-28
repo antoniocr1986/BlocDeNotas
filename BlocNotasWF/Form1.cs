@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,9 +22,24 @@ namespace BlocNotasWF
         {
             string abrir;
             openFileDialog1.ShowDialog();
-            System.IO.StreamReader file = new System.IO.StreamReader(openFileDialog1.FileName);
-            abrir = file.ReadToEnd();
-            richTextBox1.Text = abrir;
+
+            try
+            {
+                System.IO.StreamReader file = new System.IO.StreamReader(openFileDialog1.FileName);
+                if (openFileDialog1.FileName.Contains(".txt"))
+                {
+                    abrir = file.ReadToEnd();
+                    richTextBox1.Text = abrir;
+                }
+                else
+                {
+                    MessageBox.Show("El archivo elejido ha de ser un .txt");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error al abrir archivo: " + ex.Message);
+            }
         }
 
         private void guardarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -34,8 +50,28 @@ namespace BlocNotasWF
             {
                 using(var savefile = new System.IO.StreamWriter(saveFileDialog1.FileName))
                 {
+                    GuardarCambiosEnArchivo(saveFileDialog1.FileName);
+                    //savefile.WriteLine(richTextBox1.Text);
+                }
+            }
+        }
+
+        private void GuardarCambiosEnArchivo(string nombreArchivo = null)
+        {
+            string nombreArchivoGuardar = "nuevoTexto.txt";
+
+            try
+            {
+                using (StreamWriter savefile = new StreamWriter(nombreArchivoGuardar))
+                {
                     savefile.WriteLine(richTextBox1.Text);
                 }
+
+                Console.WriteLine("Cambios guardados correctamente en el archivo: " + nombreArchivoGuardar);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error al guardar los cambios: " + ex.Message);
             }
         }
 
@@ -62,20 +98,24 @@ namespace BlocNotasWF
         {
             if (e.CloseReason == CloseReason.UserClosing)
             {
-           
-                DialogResult result = MessageBox.Show("¿Estás seguro de que deseas cerrar la aplicación?",
+                DialogResult result = MessageBox.Show("¿Quiere cerrar sin guardar?",
                                                       "Cerrar aplicación",
-                                                      MessageBoxButtons.YesNo,
+                                                      MessageBoxButtons.YesNoCancel,
                                                       MessageBoxIcon.Question);
 
                 if (result == DialogResult.No)
                 {
                     e.Cancel = true;
+                    guardarToolStripMenuItem_Click(sender, e);
+                }
+                else if (result == DialogResult.Yes)
+
+                {
+                    Environment.Exit(0);
                 }
                 else
                 {
-                    Environment.Exit(0);
-
+                    e.Cancel = true;
                 }
             }
         }
