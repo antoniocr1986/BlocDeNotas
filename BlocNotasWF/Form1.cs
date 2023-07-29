@@ -33,8 +33,8 @@ namespace BlocNotasWF
             // Opcional: Puedes establecer otras opciones predeterminadas para el PageSetupDialog
             pageSetupDialog1.EnableMetric = true; // Para usar medidas métricas (milímetros) en lugar de pulgadas
 
+            #region barra de estado codificacion
             //CODIGO PARA MOSTRAR CODIFICACION EN BARRA DE ESTADO
-
             // Suscribirse al evento TextChanged del RichTextBox
             richTextBox1.TextChanged += (sender, e) =>
             {
@@ -99,6 +99,7 @@ namespace BlocNotasWF
 
             return true;
         }
+        #endregion
 
 
         private void abrirToolStripMenuItem_Click(object sender, EventArgs e)
@@ -126,6 +127,7 @@ namespace BlocNotasWF
             }
         }
 
+        #region metodos guardar y guardar como...
         private void guardarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (archivoActual == "nuevoArchivo.txt")
@@ -190,8 +192,168 @@ namespace BlocNotasWF
                 Console.WriteLine("Error al guardar los cambios: " + ex.Message);
             }
         }
+        #endregion
 
+        private void configurarPáginaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Mostrar el PageSetupDialog cuando se hace clic en el botón
+            if (pageSetupDialog1.ShowDialog() == DialogResult.OK)
+            {
+                // Si el usuario hace clic en "Aceptar" en el diálogo de configuración de página,
+                // puedes usar las propiedades de PageSettings para personalizar la impresión según las opciones seleccionadas.
+                // Por ejemplo, puedes acceder a la orientación, el tamaño del papel y los márgenes a través de:
+                // pageSetupDialog.Document.DefaultPageSettings.Landscape
+                // pageSetupDialog.Document.DefaultPageSettings.PaperSize
+                // pageSetupDialog.Document.DefaultPageSettings.Margins
+            }
+        }
 
+        #region metodos imprimir
+        private void imprimirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Mostrar el diálogo de impresión y obtener el resultado (OK, Cancel)
+            DialogResult result = printDialog1.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                PrintDocument printDocument = new PrintDocument();
+                printDocument.PrintPage += new PrintPageEventHandler(PrintText);
+                printDocument.PrinterSettings = printDialog1.PrinterSettings;
+                printDocument.Print();
+            }
+        }
+
+        private void PrintText(object sender, PrintPageEventArgs e)
+        {
+            string textToPrint = richTextBox1.Text;
+
+            Font font = richTextBox1.Font;
+            Brush brush = new SolidBrush(richTextBox1.ForeColor);
+
+            RectangleF bounds = e.MarginBounds;
+            e.Graphics.DrawString(textToPrint, font, brush, bounds, StringFormat.GenericTypographic);
+        }
+        #endregion
+
+        #region metodos seleccionar todo, cortar, copiar y pegar
+        private void seleccionarTodoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox1.SelectAll();
+        }
+
+        private void cortarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Cut();
+        }
+
+        private void copiarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Copy();
+        }
+
+        private void pegarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Clipboard.ContainsText())
+            {
+                richTextBox1.Paste();
+            }
+        }
+        #endregion
+
+        private void buscarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2();
+
+            form2.ShowDialog();
+
+            string textoBuscado = form2.GetTextBoxData();
+
+            if (!string.IsNullOrWhiteSpace(textoBuscado))
+            {
+                int index = 0;
+                int lastIndex = richTextBox1.TextLength;
+
+                while (index < lastIndex)
+                {
+                    index = richTextBox1.Find(textoBuscado, index, lastIndex, RichTextBoxFinds.None);
+                    if (index == -1)
+                        break;
+
+                    richTextBox1.SelectionBackColor = Color.Yellow;
+                    index += textoBuscado.Length;
+                }
+            }
+        }
+
+        private void fechaYHoraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DateTime fechaHoraActual = DateTime.Now;
+            string fechaHoraString = fechaHoraActual.ToString("yyyy-MM-dd HH:mm:ss");
+
+            richTextBox1.Text = fechaHoraString + "\n" + richTextBox1.Text;
+        }
+
+        private void fuenteToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            var formato = fontDialog1.ShowDialog();
+            if (formato == DialogResult.OK)
+            {
+                richTextBox1.Font = fontDialog1.Font;
+            }
+        }
+
+        private void colorToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            var color = colorDialog1.ShowDialog();
+            if (color == DialogResult.OK)
+            {
+                richTextBox1.ForeColor = colorDialog1.Color;
+            }
+        }
+
+        #region metodos de Zoom
+        private void aumentarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox1.ZoomFactor = richTextBox1.ZoomFactor + 0.2F;
+            ZoomStatusLabel_Changed(sender, e);
+
+        }
+
+        private void reducirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox1.ZoomFactor = richTextBox1.ZoomFactor - 0.2F;
+            ZoomStatusLabel_Changed(sender, e);
+        }
+
+        private void restablecerZoomOriginalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox1.ZoomFactor = 1;
+            ZoomStatusLabel_Changed(sender, e);
+        }
+
+        private void ZoomStatusLabel_Changed(object sender, EventArgs e)
+        {
+            int valor = Convert.ToInt32(richTextBox1.ZoomFactor * 100);
+            toolStripStatusLabelZoom.Text = "Zoom: " + valor + " %";
+        }
+        #endregion
+
+        #region metodos barra de estado
+        private void barraDeEstadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            statusStrip1.Visible = !statusStrip1.Visible;
+            barraDeEstadoToolStripMenuItem.Checked = !barraDeEstadoToolStripMenuItem.Checked;
+        }
+
+        private void RichTextBox1_TextChanged(object sender, EventArgs e)
+        {
+            int wordCount = richTextBox1.Text.Split(new char[] { ' ', '\t', '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries).Length;
+            toolStripStatusLabelWords.Text = "Palabras: " + wordCount;
+        }
+
+        #endregion
+
+        #region metodos salir y cerrar
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (e.CloseReason == CloseReason.UserClosing)
@@ -222,165 +384,6 @@ namespace BlocNotasWF
         {
             Environment.Exit(0);
         }
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void formatoToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            var formato = fontDialog1.ShowDialog();
-            if (formato == DialogResult.OK)
-            {
-                richTextBox1.Font = fontDialog1.Font;
-            }
-        }
-
-        private void colorToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            var color = colorDialog1.ShowDialog();
-            if (color == DialogResult.OK)
-            {
-                richTextBox1.ForeColor = colorDialog1.Color;
-            }
-        }
-
-        private void barraDeEstadoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            statusStrip1.Visible = !statusStrip1.Visible;
-            barraDeEstadoToolStripMenuItem.Checked = !barraDeEstadoToolStripMenuItem.Checked;
-        }
-
-        private void RichTextBox1_TextChanged(object sender, EventArgs e)
-        {
-            int wordCount = richTextBox1.Text.Split(new char[] { ' ', '\t', '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries).Length;
-            toolStripStatusLabelWords.Text = "Palabras: " + wordCount;
-        }
-
-        private void aumentarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            richTextBox1.ZoomFactor = richTextBox1.ZoomFactor+0.2F;
-            ZoomStatusLabel_Changed(sender, e);
-
-        }
-
-        private void reducirToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            richTextBox1.ZoomFactor = richTextBox1.ZoomFactor- 0.2F;
-            ZoomStatusLabel_Changed(sender, e);
-        }
-
-        private void restablecerZoomOriginalToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            richTextBox1.ZoomFactor = 1;
-            ZoomStatusLabel_Changed(sender, e);
-        }
-
-        private void ZoomStatusLabel_Changed(object sender, EventArgs e)
-        {
-            int valor = Convert.ToInt32(richTextBox1.ZoomFactor * 100);
-            toolStripStatusLabelZoom.Text = "Zoom: " + valor + " %";
-        }
-
-        private void cortarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            richTextBox1.Cut();
-        }
-
-        private void copiarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            richTextBox1.Copy();
-        }
-
-        private void pegarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (Clipboard.ContainsText())
-            {
-                richTextBox1.Paste();
-            }
-        }
-
-        private void fechaYHoraToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            DateTime fechaHoraActual = DateTime.Now;
-            string fechaHoraString = fechaHoraActual.ToString("yyyy-MM-dd HH:mm:ss");
-
-            richTextBox1.Text = fechaHoraString +"\n" +richTextBox1.Text;
-        }
-
-        private void buscarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Form2 form2 = new Form2();
-
-            form2.ShowDialog();
-
-            string textoBuscado = form2.GetTextBoxData();
-
-            if (!string.IsNullOrWhiteSpace(textoBuscado))
-            {
-                int index = 0;
-                int lastIndex = richTextBox1.TextLength;
-
-                while (index < lastIndex)
-                {
-                    index = richTextBox1.Find(textoBuscado, index, lastIndex, RichTextBoxFinds.None);
-                    if (index == -1)
-                        break;
-
-                    richTextBox1.SelectionBackColor = Color.Yellow;
-                    index += textoBuscado.Length;
-                }
-            }
-        }
-
-        private void imprimirToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            // Mostrar el diálogo de impresión y obtener el resultado (OK, Cancel)
-            DialogResult result = printDialog1.ShowDialog();
-
-            if (result == DialogResult.OK)
-            {
-                PrintDocument printDocument = new PrintDocument();
-                printDocument.PrintPage += new PrintPageEventHandler(PrintText);
-                printDocument.PrinterSettings = printDialog1.PrinterSettings;
-                printDocument.Print();
-            }
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void PrintText(object sender, PrintPageEventArgs e)
-        {
-            string textToPrint = richTextBox1.Text;
-
-            Font font = richTextBox1.Font;
-            Brush brush = new SolidBrush(richTextBox1.ForeColor);
-
-            RectangleF bounds = e.MarginBounds;
-            e.Graphics.DrawString(textToPrint, font, brush, bounds, StringFormat.GenericTypographic);
-        }
-
-        private void seleccionarTodoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            richTextBox1.SelectAll();
-        }
-
-        private void configurarPáginaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            // Mostrar el PageSetupDialog cuando se hace clic en el botón
-            if (pageSetupDialog1.ShowDialog() == DialogResult.OK)
-            {
-                // Si el usuario hace clic en "Aceptar" en el diálogo de configuración de página,
-                // puedes usar las propiedades de PageSettings para personalizar la impresión según las opciones seleccionadas.
-                // Por ejemplo, puedes acceder a la orientación, el tamaño del papel y los márgenes a través de:
-                // pageSetupDialog.Document.DefaultPageSettings.Landscape
-                // pageSetupDialog.Document.DefaultPageSettings.PaperSize
-                // pageSetupDialog.Document.DefaultPageSettings.Margins
-            }
-        }
+        #endregion
     }
 }

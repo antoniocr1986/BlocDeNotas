@@ -84,7 +84,6 @@ namespace BlocNotasWF
             this.menuStrip1.Size = new System.Drawing.Size(324, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // achivoToolStripMenuItem
             // 
@@ -193,7 +192,7 @@ namespace BlocNotasWF
             this.formatoToolStripMenuItem1.Name = "formatoToolStripMenuItem1";
             this.formatoToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.formatoToolStripMenuItem1.Text = "Fuente";
-            this.formatoToolStripMenuItem1.Click += new System.EventHandler(this.formatoToolStripMenuItem1_Click);
+            this.formatoToolStripMenuItem1.Click += new System.EventHandler(this.fuenteToolStripMenuItem1_Click);
             // 
             // colorToolStripMenuItem1
             // 
@@ -352,7 +351,6 @@ namespace BlocNotasWF
             this.Name = "Form1";
             this.Text = "Bloc de notas";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
