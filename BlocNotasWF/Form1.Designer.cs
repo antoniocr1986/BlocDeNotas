@@ -56,7 +56,7 @@ namespace BlocNotasWF
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabelWords = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabelZoom = new System.Windows.Forms.ToolStripStatusLabel();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.restablecerZoomOriginalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -74,6 +74,7 @@ namespace BlocNotasWF
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.ControlDark;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.achivoToolStripMenuItem,
             this.editarToolStripMenuItem,
@@ -245,6 +246,7 @@ namespace BlocNotasWF
             // 
             // richTextBox1
             // 
+            this.richTextBox1.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.richTextBox1.Location = new System.Drawing.Point(0, 24);
             this.richTextBox1.Name = "richTextBox1";
@@ -258,9 +260,10 @@ namespace BlocNotasWF
             // 
             // statusStrip1
             // 
+            this.statusStrip1.BackColor = System.Drawing.SystemColors.ControlDark;
             this.statusStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 80, 2);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1,
+            this.toolStripStatusLabelWords,
             this.toolStripStatusLabelZoom,
             this.toolStripStatusLabelCodification});
             this.statusStrip1.Location = new System.Drawing.Point(0, 289);
@@ -269,12 +272,12 @@ namespace BlocNotasWF
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // toolStripStatusLabel1
+            // toolStripStatusLabelWords
             // 
-            this.toolStripStatusLabel1.Margin = new System.Windows.Forms.Padding(0, 3, 20, 2);
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(63, 17);
-            this.toolStripStatusLabel1.Text = "Palabras: 0";
+            this.toolStripStatusLabelWords.Margin = new System.Windows.Forms.Padding(0, 3, 20, 2);
+            this.toolStripStatusLabelWords.Name = "toolStripStatusLabelWords";
+            this.toolStripStatusLabelWords.Size = new System.Drawing.Size(63, 17);
+            this.toolStripStatusLabelWords.Text = "Palabras: 0";
             // 
             // toolStripStatusLabelZoom
             // 
@@ -338,6 +341,7 @@ namespace BlocNotasWF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(324, 311);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.richTextBox1);
@@ -383,7 +387,7 @@ namespace BlocNotasWF
         private System.Windows.Forms.ToolStripMenuItem zoomToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem barraDeEstadoToolStripMenuItem;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelWords;
         private System.Windows.Forms.ToolStripMenuItem aumentarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reducirToolStripMenuItem;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelZoom;

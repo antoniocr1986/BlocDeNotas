@@ -255,7 +255,7 @@ namespace BlocNotasWF
         private void RichTextBox1_TextChanged(object sender, EventArgs e)
         {
             int wordCount = richTextBox1.Text.Split(new char[] { ' ', '\t', '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries).Length;
-            toolStripStatusLabel1.Text = "Palabras: " + wordCount;
+            toolStripStatusLabelWords.Text = "Palabras: " + wordCount;
         }
 
         private void aumentarToolStripMenuItem_Click(object sender, EventArgs e)
