@@ -25,26 +25,20 @@ namespace BlocNotasWF
 
 
             //CODIGO PARA ARCHIVO-CONFIGURAR PAGINA
-            // Crear el objeto PageSetupDialog
             pageSetupDialog1 = new PageSetupDialog();
             // Asociar el PageSetupDialog al RichTextBox para obtener sus propiedades de impresión
             pageSetupDialog1.Document = new System.Drawing.Printing.PrintDocument();
             pageSetupDialog1.Document.DefaultPageSettings = new System.Drawing.Printing.PageSettings();
-            // Opcional: Puedes establecer otras opciones predeterminadas para el PageSetupDialog
-            pageSetupDialog1.EnableMetric = true; // Para usar medidas métricas (milímetros) en lugar de pulgadas
+            pageSetupDialog1.EnableMetric = true; // Usar medidas métricas (milímetros) en ves de pulgadas
 
             #region barra de estado codificacion
             //CODIGO PARA MOSTRAR CODIFICACION EN BARRA DE ESTADO
-            // Suscribirse al evento TextChanged del RichTextBox
             richTextBox1.TextChanged += (sender, e) =>
             {
-                // Obtener el texto actual del RichTextBox
                 string text = richTextBox1.Text;
 
-                // Intentar determinar la codificación del texto
                 Encoding encoding = TryDetectEncoding(text);
 
-                // Actualizar el texto del ToolStripStatusLabel con la codificación detectada
                 if (encoding != null)
                 {
                     toolStripStatusLabelCodification.Text = "Codificación: " + encoding.EncodingName;
@@ -65,7 +59,6 @@ namespace BlocNotasWF
             Encoding.BigEndianUnicode, // UTF-16 Big Endian
             Encoding.ASCII,
             Encoding.GetEncoding("ISO-8859-1") // Latin-1
-                                               // Agregar más codificaciones si es necesario
             };
 
             foreach (Encoding encoding in encodings)
@@ -82,7 +75,7 @@ namespace BlocNotasWF
                 }
             }
 
-            return null; // No se pudo determinar la codificación
+            return null; // No obtenemos codificacion
         }
 
         // Método auxiliar para comparar dos arreglos de bytes
@@ -196,22 +189,19 @@ namespace BlocNotasWF
 
         private void configurarPáginaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // Mostrar el PageSetupDialog cuando se hace clic en el botón
             if (pageSetupDialog1.ShowDialog() == DialogResult.OK)
             {
-                // Si el usuario hace clic en "Aceptar" en el diálogo de configuración de página,
-                // puedes usar las propiedades de PageSettings para personalizar la impresión según las opciones seleccionadas.
-                // Por ejemplo, puedes acceder a la orientación, el tamaño del papel y los márgenes a través de:
-                // pageSetupDialog.Document.DefaultPageSettings.Landscape
-                // pageSetupDialog.Document.DefaultPageSettings.PaperSize
-                // pageSetupDialog.Document.DefaultPageSettings.Margins
+                //METODO A COMPLETAR AUN
+                /* Podremos modificar la orientación, el tamaño del papel y los márgenes con:
+                 pageSetupDialog.Document.DefaultPageSettings.Landscape
+                 pageSetupDialog.Document.DefaultPageSettings.PaperSize
+                 pageSetupDialog.Document.DefaultPageSettings.Margins*/
             }
         }
 
         #region metodos imprimir
         private void imprimirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // Mostrar el diálogo de impresión y obtener el resultado (OK, Cancel)
             DialogResult result = printDialog1.ShowDialog();
 
             if (result == DialogResult.OK)
@@ -385,5 +375,10 @@ namespace BlocNotasWF
             Environment.Exit(0);
         }
         #endregion
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

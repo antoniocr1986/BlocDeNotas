@@ -26,7 +26,12 @@ namespace BlocNotasWF
         {
             string textoBuscado = textBoxBuscar.Text;
 
-            this.Close();//Cerramos la ventana
+            this.Close();
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
