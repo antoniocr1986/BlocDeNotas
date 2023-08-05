@@ -95,7 +95,7 @@ namespace BlocNotasWF
         #endregion
 
 
-        private void abrirToolStripMenuItem_Click(object sender, EventArgs e)
+        private void AbrirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string abrir;
             openFileDialog1.ShowDialog();
@@ -121,11 +121,11 @@ namespace BlocNotasWF
         }
 
         #region metodos guardar y guardar como...
-        private void guardarToolStripMenuItem_Click(object sender, EventArgs e)
+        private void GuardarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (archivoActual == "nuevoArchivo.txt")
             {
-                guardarComoToolStripMenuItem_Click(sender, e);
+                GuardarComoToolStripMenuItem_Click(sender, e);
             }
             else
             {
@@ -151,7 +151,7 @@ namespace BlocNotasWF
             }
         }
 
-        private void guardarComoToolStripMenuItem_Click(object sender, EventArgs e)
+        private void GuardarComoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             saveFileDialog1.FileName = ".txt";
             var save = saveFileDialog1.ShowDialog();
@@ -187,7 +187,7 @@ namespace BlocNotasWF
         }
         #endregion
 
-        private void configurarPáginaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ConfigurarPáginaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (pageSetupDialog1.ShowDialog() == DialogResult.OK)
             {
@@ -200,7 +200,7 @@ namespace BlocNotasWF
         }
 
         #region metodos imprimir
-        private void imprimirToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ImprimirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DialogResult result = printDialog1.ShowDialog();
 
@@ -226,22 +226,22 @@ namespace BlocNotasWF
         #endregion
 
         #region metodos seleccionar todo, cortar, copiar y pegar
-        private void seleccionarTodoToolStripMenuItem_Click(object sender, EventArgs e)
+        private void SeleccionarTodoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             richTextBox1.SelectAll();
         }
 
-        private void cortarToolStripMenuItem_Click(object sender, EventArgs e)
+        private void CortarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             richTextBox1.Cut();
         }
 
-        private void copiarToolStripMenuItem_Click(object sender, EventArgs e)
+        private void CopiarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             richTextBox1.Copy();
         }
 
-        private void pegarToolStripMenuItem_Click(object sender, EventArgs e)
+        private void PegarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (Clipboard.ContainsText())
             {
@@ -250,7 +250,7 @@ namespace BlocNotasWF
         }
         #endregion
 
-        private void buscarToolStripMenuItem_Click(object sender, EventArgs e)
+        private void BuscarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form2 form2 = new Form2();
 
@@ -275,7 +275,7 @@ namespace BlocNotasWF
             }
         }
 
-        private void fechaYHoraToolStripMenuItem_Click(object sender, EventArgs e)
+        private void FechaYHoraToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DateTime fechaHoraActual = DateTime.Now;
             string fechaHoraString = fechaHoraActual.ToString("yyyy-MM-dd HH:mm:ss");
@@ -283,7 +283,7 @@ namespace BlocNotasWF
             richTextBox1.Text = fechaHoraString + "\n" + richTextBox1.Text;
         }
 
-        private void fuenteToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void FuenteToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             var formato = fontDialog1.ShowDialog();
             if (formato == DialogResult.OK)
@@ -292,7 +292,7 @@ namespace BlocNotasWF
             }
         }
 
-        private void colorToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void ColorToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             var color = colorDialog1.ShowDialog();
             if (color == DialogResult.OK)
@@ -302,20 +302,20 @@ namespace BlocNotasWF
         }
 
         #region metodos de Zoom
-        private void aumentarToolStripMenuItem_Click(object sender, EventArgs e)
+        private void AumentarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             richTextBox1.ZoomFactor = richTextBox1.ZoomFactor + 0.2F;
             ZoomStatusLabel_Changed(sender, e);
 
         }
 
-        private void reducirToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ReducirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             richTextBox1.ZoomFactor = richTextBox1.ZoomFactor - 0.2F;
             ZoomStatusLabel_Changed(sender, e);
         }
 
-        private void restablecerZoomOriginalToolStripMenuItem_Click(object sender, EventArgs e)
+        private void RestablecerZoomOriginalToolStripMenuItem_Click(object sender, EventArgs e)
         {
             richTextBox1.ZoomFactor = 1;
             ZoomStatusLabel_Changed(sender, e);
@@ -329,7 +329,7 @@ namespace BlocNotasWF
         #endregion
 
         #region metodos barra de estado
-        private void barraDeEstadoToolStripMenuItem_Click(object sender, EventArgs e)
+        private void BarraDeEstadoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             statusStrip1.Visible = !statusStrip1.Visible;
             barraDeEstadoToolStripMenuItem.Checked = !barraDeEstadoToolStripMenuItem.Checked;
@@ -356,7 +356,7 @@ namespace BlocNotasWF
                 if (result == DialogResult.No)
                 {
                     e.Cancel = true;
-                    guardarToolStripMenuItem_Click(sender, e);
+                    GuardarToolStripMenuItem_Click(sender, e);
                 }
                 else if (result == DialogResult.Yes)
 
@@ -370,15 +370,10 @@ namespace BlocNotasWF
             }
         }
 
-        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        private void SalirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Environment.Exit(0);
         }
         #endregion
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

@@ -21,3 +21,6 @@ C:\Users\anton\Desktop\BlocDeNotas\BlocNotasWF\obj\Debug\BlocNotasWF.csproj.Gene
 C:\Users\anton\Desktop\BlocDeNotas\BlocNotasWF\obj\Debug\BlocNotasWF.csproj.CoreCompileInputs.cache
 C:\Users\anton\Desktop\BlocDeNotas\BlocNotasWF\obj\Debug\BlocNotasWF.exe
 C:\Users\anton\Desktop\BlocDeNotas\BlocNotasWF\obj\Debug\BlocNotasWF.pdb
+C:\Users\anton\Desktop\BlocDeNotas\BlocNotasWF\bin\Debug\Newtonsoft.Json.dll
+C:\Users\anton\Desktop\BlocDeNotas\BlocNotasWF\bin\Debug\Newtonsoft.Json.xml
+C:\Users\anton\Desktop\BlocDeNotas\BlocNotasWF\obj\Debug\BlocNotasWF.csproj.CopyComplete

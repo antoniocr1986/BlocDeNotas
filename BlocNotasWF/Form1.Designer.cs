@@ -105,21 +105,21 @@ namespace BlocNotasWF
             this.abrirToolStripMenuItem.Name = "abrirToolStripMenuItem";
             this.abrirToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.abrirToolStripMenuItem.Text = "Abrir";
-            this.abrirToolStripMenuItem.Click += new System.EventHandler(this.abrirToolStripMenuItem_Click);
+            this.abrirToolStripMenuItem.Click += new System.EventHandler(this.AbrirToolStripMenuItem_Click);
             // 
             // guardarToolStripMenuItem
             // 
             this.guardarToolStripMenuItem.Name = "guardarToolStripMenuItem";
             this.guardarToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.guardarToolStripMenuItem.Text = "Guardar";
-            this.guardarToolStripMenuItem.Click += new System.EventHandler(this.guardarToolStripMenuItem_Click);
+            this.guardarToolStripMenuItem.Click += new System.EventHandler(this.GuardarToolStripMenuItem_Click);
             // 
             // guardarComoToolStripMenuItem
             // 
             this.guardarComoToolStripMenuItem.Name = "guardarComoToolStripMenuItem";
             this.guardarComoToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.guardarComoToolStripMenuItem.Text = "Guardar como...";
-            this.guardarComoToolStripMenuItem.Click += new System.EventHandler(this.guardarComoToolStripMenuItem_Click);
+            this.guardarComoToolStripMenuItem.Click += new System.EventHandler(this.GuardarComoToolStripMenuItem_Click);
             // 
             // toolStripSeparator3
             // 
@@ -131,14 +131,14 @@ namespace BlocNotasWF
             this.configurarPáginaToolStripMenuItem.Name = "configurarPáginaToolStripMenuItem";
             this.configurarPáginaToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.configurarPáginaToolStripMenuItem.Text = "Configurar página";
-            this.configurarPáginaToolStripMenuItem.Click += new System.EventHandler(this.configurarPáginaToolStripMenuItem_Click);
+            this.configurarPáginaToolStripMenuItem.Click += new System.EventHandler(this.ConfigurarPáginaToolStripMenuItem_Click);
             // 
             // imprimirToolStripMenuItem
             // 
             this.imprimirToolStripMenuItem.Name = "imprimirToolStripMenuItem";
             this.imprimirToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.imprimirToolStripMenuItem.Text = "Imprimir";
-            this.imprimirToolStripMenuItem.Click += new System.EventHandler(this.imprimirToolStripMenuItem_Click);
+            this.imprimirToolStripMenuItem.Click += new System.EventHandler(this.ImprimirToolStripMenuItem_Click);
             // 
             // toolStripSeparator4
             // 
@@ -150,7 +150,7 @@ namespace BlocNotasWF
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
             this.salirToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.salirToolStripMenuItem.Text = "Salir";
-            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.SalirToolStripMenuItem_Click);
             // 
             // editarToolStripMenuItem
             // 
@@ -174,21 +174,21 @@ namespace BlocNotasWF
             this.cortarToolStripMenuItem.Name = "cortarToolStripMenuItem";
             this.cortarToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.cortarToolStripMenuItem.Text = "Cortar";
-            this.cortarToolStripMenuItem.Click += new System.EventHandler(this.cortarToolStripMenuItem_Click);
+            this.cortarToolStripMenuItem.Click += new System.EventHandler(this.CortarToolStripMenuItem_Click);
             // 
             // copiarToolStripMenuItem
             // 
             this.copiarToolStripMenuItem.Name = "copiarToolStripMenuItem";
             this.copiarToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.copiarToolStripMenuItem.Text = "Copiar";
-            this.copiarToolStripMenuItem.Click += new System.EventHandler(this.copiarToolStripMenuItem_Click);
+            this.copiarToolStripMenuItem.Click += new System.EventHandler(this.CopiarToolStripMenuItem_Click);
             // 
             // pegarToolStripMenuItem
             // 
             this.pegarToolStripMenuItem.Name = "pegarToolStripMenuItem";
             this.pegarToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.pegarToolStripMenuItem.Text = "Pegar";
-            this.pegarToolStripMenuItem.Click += new System.EventHandler(this.pegarToolStripMenuItem_Click);
+            this.pegarToolStripMenuItem.Click += new System.EventHandler(this.PegarToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
@@ -200,21 +200,21 @@ namespace BlocNotasWF
             this.buscarToolStripMenuItem.Name = "buscarToolStripMenuItem";
             this.buscarToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.buscarToolStripMenuItem.Text = "Buscar";
-            this.buscarToolStripMenuItem.Click += new System.EventHandler(this.buscarToolStripMenuItem_Click);
+            this.buscarToolStripMenuItem.Click += new System.EventHandler(this.BuscarToolStripMenuItem_Click);
             // 
             // seleccionarTodoToolStripMenuItem
             // 
             this.seleccionarTodoToolStripMenuItem.Name = "seleccionarTodoToolStripMenuItem";
             this.seleccionarTodoToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.seleccionarTodoToolStripMenuItem.Text = "Seleccionar todo";
-            this.seleccionarTodoToolStripMenuItem.Click += new System.EventHandler(this.seleccionarTodoToolStripMenuItem_Click);
+            this.seleccionarTodoToolStripMenuItem.Click += new System.EventHandler(this.SeleccionarTodoToolStripMenuItem_Click);
             // 
             // fechaYHoraToolStripMenuItem
             // 
             this.fechaYHoraToolStripMenuItem.Name = "fechaYHoraToolStripMenuItem";
             this.fechaYHoraToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.fechaYHoraToolStripMenuItem.Text = "Fecha y hora";
-            this.fechaYHoraToolStripMenuItem.Click += new System.EventHandler(this.fechaYHoraToolStripMenuItem_Click);
+            this.fechaYHoraToolStripMenuItem.Click += new System.EventHandler(this.FechaYHoraToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
@@ -226,14 +226,14 @@ namespace BlocNotasWF
             this.formatoToolStripMenuItem1.Name = "formatoToolStripMenuItem1";
             this.formatoToolStripMenuItem1.Size = new System.Drawing.Size(162, 22);
             this.formatoToolStripMenuItem1.Text = "Fuente";
-            this.formatoToolStripMenuItem1.Click += new System.EventHandler(this.fuenteToolStripMenuItem1_Click);
+            this.formatoToolStripMenuItem1.Click += new System.EventHandler(this.FuenteToolStripMenuItem1_Click);
             // 
             // colorToolStripMenuItem1
             // 
             this.colorToolStripMenuItem1.Name = "colorToolStripMenuItem1";
             this.colorToolStripMenuItem1.Size = new System.Drawing.Size(162, 22);
             this.colorToolStripMenuItem1.Text = "Color";
-            this.colorToolStripMenuItem1.Click += new System.EventHandler(this.colorToolStripMenuItem1_Click);
+            this.colorToolStripMenuItem1.Click += new System.EventHandler(this.ColorToolStripMenuItem1_Click);
             // 
             // verToolStripMenuItem
             // 
@@ -259,21 +259,21 @@ namespace BlocNotasWF
             this.aumentarToolStripMenuItem.Name = "aumentarToolStripMenuItem";
             this.aumentarToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
             this.aumentarToolStripMenuItem.Text = "Aumentar";
-            this.aumentarToolStripMenuItem.Click += new System.EventHandler(this.aumentarToolStripMenuItem_Click);
+            this.aumentarToolStripMenuItem.Click += new System.EventHandler(this.AumentarToolStripMenuItem_Click);
             // 
             // reducirToolStripMenuItem
             // 
             this.reducirToolStripMenuItem.Name = "reducirToolStripMenuItem";
             this.reducirToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
             this.reducirToolStripMenuItem.Text = "Reducir";
-            this.reducirToolStripMenuItem.Click += new System.EventHandler(this.reducirToolStripMenuItem_Click);
+            this.reducirToolStripMenuItem.Click += new System.EventHandler(this.ReducirToolStripMenuItem_Click);
             // 
             // restablecerZoomOriginalToolStripMenuItem
             // 
             this.restablecerZoomOriginalToolStripMenuItem.Name = "restablecerZoomOriginalToolStripMenuItem";
             this.restablecerZoomOriginalToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
             this.restablecerZoomOriginalToolStripMenuItem.Text = "Restablecer zoom original";
-            this.restablecerZoomOriginalToolStripMenuItem.Click += new System.EventHandler(this.restablecerZoomOriginalToolStripMenuItem_Click);
+            this.restablecerZoomOriginalToolStripMenuItem.Click += new System.EventHandler(this.RestablecerZoomOriginalToolStripMenuItem_Click);
             // 
             // barraDeEstadoToolStripMenuItem
             // 
@@ -282,7 +282,7 @@ namespace BlocNotasWF
             this.barraDeEstadoToolStripMenuItem.Name = "barraDeEstadoToolStripMenuItem";
             this.barraDeEstadoToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.barraDeEstadoToolStripMenuItem.Text = "Barra de estado";
-            this.barraDeEstadoToolStripMenuItem.Click += new System.EventHandler(this.barraDeEstadoToolStripMenuItem_Click);
+            this.barraDeEstadoToolStripMenuItem.Click += new System.EventHandler(this.BarraDeEstadoToolStripMenuItem_Click);
             // 
             // richTextBox1
             // 
@@ -351,7 +351,6 @@ namespace BlocNotasWF
             this.Name = "Form1";
             this.Text = "Bloc de notas";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
