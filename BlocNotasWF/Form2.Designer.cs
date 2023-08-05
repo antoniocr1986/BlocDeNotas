@@ -63,7 +63,6 @@ namespace BlocNotasWF
             this.MinimumSize = new System.Drawing.Size(280, 140);
             this.Name = "Form2";
             this.Text = "Texto a buscar:";
-            this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

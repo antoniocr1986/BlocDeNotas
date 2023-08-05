@@ -24,8 +24,6 @@ namespace BlocNotasWF
 
         private void ButtonBuscar_Click(object sender, EventArgs e)
         {
-            string textoBuscado = textBoxBuscar.Text;
-
             this.Close();
         }
     }
