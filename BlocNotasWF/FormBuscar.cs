@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BlocNotasWF
 {
-    public partial class Form2 : Form
+    public partial class FormBuscar : Form
     {
-        public Form2()
+        public FormBuscar()
         {
             InitializeComponent();
         }

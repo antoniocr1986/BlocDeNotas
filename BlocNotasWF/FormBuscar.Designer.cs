@@ -1,7 +1,7 @@
 ﻿
 namespace BlocNotasWF
 {
-    partial class Form2
+    partial class FormBuscar
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace BlocNotasWF
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormBuscar));
             this.textBoxBuscar = new System.Windows.Forms.TextBox();
             this.buttonBuscar = new System.Windows.Forms.Button();
             this.SuspendLayout();
