@@ -251,7 +251,7 @@ namespace BlocNotasWF
 
         public void BuscarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form2 form2 = new Form2();
+            FormBuscar form2 = new FormBuscar();
 
             form2.ShowDialog();
 
@@ -323,7 +323,7 @@ namespace BlocNotasWF
         public void ZoomStatusLabel_Changed(object sender, EventArgs e)
         {
             int valor = Convert.ToInt32(richTextBox1.ZoomFactor * 100);
-            toolStripStatusLabelZoom.Text = "Zoom: " + valor + " %";
+            toolStripStatusLabelZoom.Text = $"Zoom: {valor} %";
         }
         #endregion
 
