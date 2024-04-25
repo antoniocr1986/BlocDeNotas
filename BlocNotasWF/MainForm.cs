@@ -12,11 +12,11 @@ using System.Windows.Forms;
 
 namespace BlocNotasWF
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
         private string archivoActual ="nuevoArchivo.txt";
 
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
 

@@ -24,3 +24,15 @@ C:\Users\anton\Desktop\BlocDeNotas\BlocNotasWF\obj\Debug\BlocNotasWF.pdb
 C:\Users\anton\Desktop\BlocDeNotas\BlocNotasWF\bin\Debug\Newtonsoft.Json.dll
 C:\Users\anton\Desktop\BlocDeNotas\BlocNotasWF\bin\Debug\Newtonsoft.Json.xml
 C:\Users\anton\Desktop\BlocDeNotas\BlocNotasWF\obj\Debug\BlocNotasWF.csproj.CopyComplete
+C:\Users\anton\OneDrive\Escritorio\Proyectos git\BlocDeNotasGit2\BlocDeNotas\BlocNotasWF\bin\Debug\BlocNotasWF.exe.config
+C:\Users\anton\OneDrive\Escritorio\Proyectos git\BlocDeNotasGit2\BlocDeNotas\BlocNotasWF\obj\Debug\BlocNotasWF.exe
+C:\Users\anton\OneDrive\Escritorio\Proyectos git\BlocDeNotasGit2\BlocDeNotas\BlocNotasWF\obj\Debug\BlocNotasWF.pdb
+C:\Users\anton\OneDrive\Escritorio\Proyectos git\BlocDeNotasGit2\BlocDeNotas\BlocNotasWF\bin\Debug\BlocNotasWF.exe
+C:\Users\anton\OneDrive\Escritorio\Proyectos git\BlocDeNotasGit2\BlocDeNotas\BlocNotasWF\bin\Debug\BlocNotasWF.pdb
+C:\Users\anton\OneDrive\Escritorio\Proyectos git\BlocDeNotasGit2\BlocDeNotas\BlocNotasWF\bin\Debug\Newtonsoft.Json.dll
+C:\Users\anton\OneDrive\Escritorio\Proyectos git\BlocDeNotasGit2\BlocDeNotas\BlocNotasWF\bin\Debug\Newtonsoft.Json.xml
+C:\Users\anton\OneDrive\Escritorio\Proyectos git\BlocDeNotasGit2\BlocDeNotas\BlocNotasWF\obj\Debug\BlocNotasWF.csprojResolveAssemblyReference.cache
+C:\Users\anton\OneDrive\Escritorio\Proyectos git\BlocDeNotasGit2\BlocDeNotas\BlocNotasWF\obj\Debug\BlocNotasWF.MainForm.resources
+C:\Users\anton\OneDrive\Escritorio\Proyectos git\BlocDeNotasGit2\BlocDeNotas\BlocNotasWF\obj\Debug\BlocNotasWF.FormBuscar.resources
+C:\Users\anton\OneDrive\Escritorio\Proyectos git\BlocDeNotasGit2\BlocDeNotas\BlocNotasWF\obj\Debug\BlocNotasWF.Properties.Resources.resources
+C:\Users\anton\OneDrive\Escritorio\Proyectos git\BlocDeNotasGit2\BlocDeNotas\BlocNotasWF\obj\Debug\BlocNotasWF.csproj.GenerateResource.Cache
