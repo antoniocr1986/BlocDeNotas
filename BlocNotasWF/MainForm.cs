@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Printing;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +20,8 @@ namespace BlocNotasWF
         public MainForm()
         {
             InitializeComponent();
+
+            aplicarMargenes();
 
             //CODIGO PARA AÑADIR EVENTO AL CAMBIAR EL TEXTO DEL RICHTEXTBOX
             richTextBox1.TextChanged += RichTextBox1_TextChanged;
@@ -48,6 +51,13 @@ namespace BlocNotasWF
                     toolStripStatusLabelCodification.Text = "Codificación: No se pudo determinar";
                 }
             };
+        }
+
+        public void aplicarMargenes()
+        {
+            richTextBox1.SelectionIndent = 10; // Establecer el margen izquierdo en 10 píxeles
+            richTextBox1.SelectionRightIndent = 10; // Establecer el margen derecho en 10 píxeles    
+                                                   
         }
 
         private Encoding TryDetectEncoding(string text)
@@ -374,5 +384,14 @@ namespace BlocNotasWF
             Environment.Exit(0);
         }
         #endregion
-    }
+
+        private void pictureBoxConfig_Click(object sender, EventArgs e)
+        {
+            // Define el nombre del paquete de tu aplicación (esto puede variar según tu aplicación)
+            string packageName = "Bloc de notas by Antonio Company";
+
+            // Abre la configuración de la aplicación en la página específica
+            Process.Start("ms-settings:appsfeatures-app", packageName);//TODO hacer que habra especificamente la seccion de mi aplicacion
+        }
+    }  
 }
