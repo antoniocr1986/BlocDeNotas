@@ -29,6 +29,7 @@ namespace BlocNotasWF
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.achivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -69,9 +70,16 @@ namespace BlocNotasWF
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.pageSetupDialog1 = new System.Windows.Forms.PageSetupDialog();
             this.pictureBoxConfig = new System.Windows.Forms.PictureBox();
+            this.contextMenuStripMain = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.deshacerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cortarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.copiarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.pegarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.seleccionarTodoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConfig)).BeginInit();
+            this.contextMenuStripMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -367,6 +375,47 @@ namespace BlocNotasWF
             this.pictureBoxConfig.TabStop = false;
             this.pictureBoxConfig.Click += new System.EventHandler(this.pictureBoxConfig_Click);
             // 
+            // contextMenuStripMain
+            // 
+            this.contextMenuStripMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.deshacerToolStripMenuItem,
+            this.cortarToolStripMenuItem1,
+            this.copiarToolStripMenuItem1,
+            this.pegarToolStripMenuItem1,
+            this.seleccionarTodoToolStripMenuItem1});
+            this.contextMenuStripMain.Name = "contextMenuStripMain";
+            this.contextMenuStripMain.Size = new System.Drawing.Size(181, 136);
+            // 
+            // deshacerToolStripMenuItem
+            // 
+            this.deshacerToolStripMenuItem.Name = "deshacerToolStripMenuItem";
+            this.deshacerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.deshacerToolStripMenuItem.Text = "Deshacer";
+            // 
+            // cortarToolStripMenuItem1
+            // 
+            this.cortarToolStripMenuItem1.Name = "cortarToolStripMenuItem1";
+            this.cortarToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.cortarToolStripMenuItem1.Text = "Cortar";
+            // 
+            // copiarToolStripMenuItem1
+            // 
+            this.copiarToolStripMenuItem1.Name = "copiarToolStripMenuItem1";
+            this.copiarToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.copiarToolStripMenuItem1.Text = "Copiar";
+            // 
+            // pegarToolStripMenuItem1
+            // 
+            this.pegarToolStripMenuItem1.Name = "pegarToolStripMenuItem1";
+            this.pegarToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.pegarToolStripMenuItem1.Text = "Pegar";
+            // 
+            // seleccionarTodoToolStripMenuItem1
+            // 
+            this.seleccionarTodoToolStripMenuItem1.Name = "seleccionarTodoToolStripMenuItem1";
+            this.seleccionarTodoToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.seleccionarTodoToolStripMenuItem1.Text = "Seleccionar Todo";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -388,6 +437,7 @@ namespace BlocNotasWF
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConfig)).EndInit();
+            this.contextMenuStripMain.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -434,6 +484,12 @@ namespace BlocNotasWF
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.PictureBox pictureBoxConfig;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStripMain;
+        private System.Windows.Forms.ToolStripMenuItem deshacerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cortarToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem copiarToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem pegarToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem seleccionarTodoToolStripMenuItem1;
     }
 }
 

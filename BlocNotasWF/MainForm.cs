@@ -35,6 +35,7 @@ namespace BlocNotasWF
             pageSetupDialog1.EnableMetric = true; // Usar medidas métricas (milímetros) en ves de pulgadas
 
             #region barra de estado codificacion
+
             //CODIGO PARA MOSTRAR CODIFICACION EN BARRA DE ESTADO
             richTextBox1.TextChanged += (sender, e) =>
             {
@@ -51,6 +52,9 @@ namespace BlocNotasWF
                     toolStripStatusLabelCodification.Text = "Codificación: No se pudo determinar";
                 }
             };
+
+            // Configura el ContextMenuStrip para el formulario
+            this.ContextMenuStrip = contextMenuStripMain;
         }
 
         public void aplicarMargenes()
@@ -103,7 +107,7 @@ namespace BlocNotasWF
             return true;
         }
 #endregion
-
+            
 
         public void AbrirToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -387,11 +391,19 @@ namespace BlocNotasWF
 
         private void pictureBoxConfig_Click(object sender, EventArgs e)
         {
+            Configuracion configuracion = new Configuracion();
+
+            configuracion.Show();
+            /*
             // Define el nombre del paquete de tu aplicación (esto puede variar según tu aplicación)
             string packageName = "Bloc de notas by Antonio Company";
 
+            
+
             // Abre la configuración de la aplicación en la página específica
-            Process.Start("ms-settings:appsfeatures-app", packageName);//TODO hacer que habra especificamente la seccion de mi aplicacion
+            Process.Start("ms-settings:appsfeatures", packageName);//TODO hacer que habra especificamente la seccion de mi aplicacion
+            */
         }
+
     }  
 }
