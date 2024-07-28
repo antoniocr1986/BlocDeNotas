@@ -391,7 +391,7 @@ namespace BlocNotasWF
 
         private void pictureBoxConfig_Click(object sender, EventArgs e)
         {
-            Configuracion configuracion = new Configuracion();
+            Configuracion configuracion = new Configuracion(this);
 
             configuracion.Show();
             /*
@@ -405,5 +405,41 @@ namespace BlocNotasWF
             */
         }
 
+        private void deshacerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (richTextBox1.CanUndo)
+            {
+                richTextBox1.Undo();
+            }
+        }
+
+        private void cortarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (richTextBox1.SelectedText.Length > 0)
+            {
+                richTextBox1.Cut();
+            }
+        }
+
+        private void copiarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (richTextBox1.SelectedText.Length > 0)
+            {
+                richTextBox1.Copy();
+            }
+        }
+
+        private void pegarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (Clipboard.ContainsText())
+            {
+                richTextBox1.Paste();
+            }
+        }
+
+        private void seleccionarTodoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
     }  
 }

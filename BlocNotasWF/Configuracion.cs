@@ -9,23 +9,24 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BlocNotasWF
+   
 {
     public partial class Configuracion : Form
     {
-        public Configuracion()
+        MainForm mainform;
+
+        public Configuracion(MainForm ventanaMain)
         {
             InitializeComponent();
+            mainform = ventanaMain;
+            
         }
 
         private void Configuracion_Load(object sender, EventArgs e)
         {
 
         }
-
-        private void italicToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void labelFormato_Click(object sender, EventArgs e)
         {
@@ -44,6 +45,106 @@ namespace BlocNotasWF
                 FileName = url,
                 UseShellExecute = true
             });
+        }
+
+        private void cambiarFamiliaTexto(object sender, EventArgs e, string newFamily)
+        {
+            mainform.richTextBox1.SelectAll();
+            Font currentFont = mainform.richTextBox1.SelectionFont;
+            Font newFont = new Font(newFamily, currentFont.Size, currentFont.Style);
+            mainform.richTextBox1.SelectionFont = newFont;
+        }
+
+        private void cambiarEstiloTexto(object sender, EventArgs e, FontStyle newStyle)
+        {
+            mainform.richTextBox1.SelectAll();
+            Font currentFont = mainform.richTextBox1.SelectionFont;
+            Font newFont = new Font(currentFont.FontFamily, currentFont.Size, newStyle);
+            mainform.richTextBox1.SelectionFont = newFont;
+        }
+
+        private void cambiarTamañoTexto(object sender, EventArgs e, float newSize) 
+        {
+            mainform.richTextBox1.SelectAll();
+            Font currentFont = mainform.richTextBox1.SelectionFont;
+            Font newFont = new Font(currentFont.FontFamily, newSize, currentFont.Style);
+            mainform.richTextBox1.SelectionFont = newFont;
+        }
+
+
+        private void toolStripFormatoTamaño8_Click(object sender, EventArgs e)
+        {
+            cambiarTamañoTexto(sender, e, 8 );
+        }
+
+        private void toolStripFormatoTamaño10_Click(object sender, EventArgs e)
+        {
+            cambiarTamañoTexto(sender, e, 10);
+        }
+
+        private void toolStripFormatoTamaño12_Click(object sender, EventArgs e)
+        {
+            cambiarTamañoTexto(sender, e, 12);
+        }
+
+        private void toolStripFormatoTamaño14_Click(object sender, EventArgs e)
+        {
+            cambiarTamañoTexto(sender, e, 14);
+        }
+
+        private void toolStripFormatoTamaño18_Click(object sender, EventArgs e)
+        {
+            cambiarTamañoTexto(sender, e, 18);
+        }
+
+        private void toolStripFormatoTamaño24_Click(object sender, EventArgs e)
+        {
+            cambiarTamañoTexto(sender, e, 24);
+        }
+
+        private void toolStripFormatoTamaño36_Click(object sender, EventArgs e)
+        {
+            cambiarTamañoTexto(sender, e, 36);
+        }
+
+        private void timesNewRomanToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cambiarFamiliaTexto(sender,e , "Times New Roman");
+        }
+
+        private void wideLatinToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cambiarFamiliaTexto(sender, e, "Wide Latin");
+        }
+
+        private void lucidaSansToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cambiarFamiliaTexto(sender, e, "Lucida Sans");
+        }
+
+        private void consolasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cambiarFamiliaTexto(sender, e, "Consolas");
+        }
+
+        private void regularToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cambiarEstiloTexto(sender,e,FontStyle.Regular);
+        }
+
+        private void negritaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cambiarEstiloTexto(sender, e, FontStyle.Bold);
+        }
+
+        private void italicToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cambiarEstiloTexto(sender, e, FontStyle.Italic);
+        }
+
+        private void negritaCursivaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cambiarEstiloTexto(sender, e, FontStyle.Bold | FontStyle.Italic);
         }
     }
 }
