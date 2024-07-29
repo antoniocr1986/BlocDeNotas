@@ -483,5 +483,10 @@ namespace BlocNotasWF
 
             MessageBox.Show("Revisión ortográfica completa.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }  
 }
