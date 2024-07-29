@@ -25,8 +25,7 @@ namespace BlocNotasWF
         private void Configuracion_Load(object sender, EventArgs e)
         {
 
-        }
-       
+        }   
 
         private void labelFormato_Click(object sender, EventArgs e)
         {
@@ -47,6 +46,7 @@ namespace BlocNotasWF
             });
         }
 
+        #region FormatoTexto
         private void cambiarFamiliaTexto(object sender, EventArgs e, string newFamily)
         {
             mainform.richTextBox1.SelectAll();
@@ -70,8 +70,9 @@ namespace BlocNotasWF
             Font newFont = new Font(currentFont.FontFamily, newSize, currentFont.Style);
             mainform.richTextBox1.SelectionFont = newFont;
         }
+        #endregion
 
-
+        #region cambiarTamaño métodosClick
         private void toolStripFormatoTamaño8_Click(object sender, EventArgs e)
         {
             cambiarTamañoTexto(sender, e, 8 );
@@ -106,6 +107,9 @@ namespace BlocNotasWF
         {
             cambiarTamañoTexto(sender, e, 36);
         }
+        #endregion
+
+        #region cambiar tipo fuente métodosClick
 
         private void timesNewRomanToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -126,7 +130,9 @@ namespace BlocNotasWF
         {
             cambiarFamiliaTexto(sender, e, "Consolas");
         }
+        #endregion
 
+        #region cambiar estilo fuente métodosClick
         private void regularToolStripMenuItem_Click(object sender, EventArgs e)
         {
             cambiarEstiloTexto(sender,e,FontStyle.Regular);
@@ -146,5 +152,6 @@ namespace BlocNotasWF
         {
             cambiarEstiloTexto(sender, e, FontStyle.Bold | FontStyle.Italic);
         }
+        #endregion
     }
 }

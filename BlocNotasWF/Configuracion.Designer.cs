@@ -141,7 +141,7 @@
             this.fuenteToolStripMenuItem,
             this.ajusteDeLíneaToolStripMenuItem});
             this.contextMenuStripFormato.Name = "contextMenuStrip1";
-            this.contextMenuStripFormato.Size = new System.Drawing.Size(181, 70);
+            this.contextMenuStripFormato.Size = new System.Drawing.Size(152, 48);
             // 
             // fuenteToolStripMenuItem
             // 
@@ -340,6 +340,7 @@
             this.Controls.Add(this.labelFormato);
             this.Controls.Add(this.label1);
             this.Name = "Configuracion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bloc de notas";
             this.Load += new System.EventHandler(this.Configuracion_Load);
             this.contextMenuStripFormato.ResumeLayout(false);

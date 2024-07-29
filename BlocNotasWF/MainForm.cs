@@ -10,6 +10,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Office.Interop.Word;
+using Word = Microsoft.Office.Interop.Word;
 
 namespace BlocNotasWF
 {
@@ -230,7 +232,7 @@ namespace BlocNotasWF
         {
             string textToPrint = richTextBox1.Text;
 
-            Font font = richTextBox1.Font;
+            System.Drawing.Font font = richTextBox1.Font;
             Brush brush = new SolidBrush(richTextBox1.ForeColor);
 
             RectangleF bounds = e.MarginBounds;
@@ -240,6 +242,11 @@ namespace BlocNotasWF
 
         #region metodos seleccionar todo, cortar, copiar y pegar
         public void SeleccionarTodoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox1.SelectAll();
+        }
+
+        private void seleccionarTodoToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             richTextBox1.SelectAll();
         }
@@ -255,6 +262,31 @@ namespace BlocNotasWF
         }
 
         public void PegarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Clipboard.ContainsText())
+            {
+                richTextBox1.Paste();
+            }
+        }
+
+
+        private void cortarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (richTextBox1.SelectedText.Length > 0)
+            {
+                richTextBox1.Cut();
+            }
+        }
+
+        private void copiarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (richTextBox1.SelectedText.Length > 0)
+            {
+                richTextBox1.Copy();
+            }
+        }
+
+        private void pegarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             if (Clipboard.ContainsText())
             {
@@ -413,33 +445,43 @@ namespace BlocNotasWF
             }
         }
 
-        private void cortarToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void activarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (richTextBox1.SelectedText.Length > 0)
-            {
-                richTextBox1.Cut();
-            }
+            CheckSpelling(richTextBox1);
         }
 
-        private void copiarToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void CheckSpelling(RichTextBox richTextBox)
         {
-            if (richTextBox1.SelectedText.Length > 0)
-            {
-                richTextBox1.Copy();
-            }
-        }
+            // Crear una instancia de la aplicación de Word
+            Word.Application wordApp = new Word.Application();
+            wordApp.Visible = false; // Hacer que Word sea invisible
 
-        private void pegarToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            if (Clipboard.ContainsText())
-            {
-                richTextBox1.Paste();
-            }
-        }
+            // Crear un nuevo documento
+            Word.Document document = wordApp.Documents.Add();
 
-        private void seleccionarTodoToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
+            // Poner el texto del RichTextBox en el documento
+            document.Content.Text = richTextBox.Text;
 
+            // Revisar la ortografía del documento
+            document.CheckSpelling();
+
+            // Obtener el texto corregido
+            string correctedText = document.Content.Text;
+
+            // Colocar el texto corregido de vuelta en el RichTextBox
+            richTextBox.Text = correctedText;
+
+            // Cerrar el documento sin guardar cambios
+            document.Close(false);
+
+            // Cerrar la aplicación de Word
+            wordApp.Quit();
+
+            // Liberar recursos
+            System.Runtime.InteropServices.Marshal.ReleaseComObject(document);
+            System.Runtime.InteropServices.Marshal.ReleaseComObject(wordApp);
+
+            MessageBox.Show("Revisión ortográfica completa.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }  
 }
