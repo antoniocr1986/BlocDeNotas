@@ -29,12 +29,8 @@ namespace BlocNotasWF
             //PARA CONFIGURACION COLORES MENU STRIP
             //menuStrip1.Renderer = new CustomMenuRenderer(); PENDIENTE DE VER SI USO O NO
 
-            //PARA CONFIGURACION MODO OSCURO Y CLARO
-
-
             //CODIGO PARA AÑADIR EVENTO AL CAMBIAR EL TEXTO DEL RICHTEXTBOX
             richTextBox1.TextChanged += RichTextBox1_TextChanged;
-
 
             //CODIGO PARA ARCHIVO-CONFIGURAR PAGINA
             pageSetupDialog1 = new PageSetupDialog();
@@ -514,6 +510,18 @@ namespace BlocNotasWF
         private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void richTextBox1_SelectionChanged(object sender, EventArgs e)
+        {
+            // Obtener la posición actual del cursor
+            int index = richTextBox1.SelectionStart;
+            int line = richTextBox1.GetLineFromCharIndex(index);
+            int firstCharIndex = richTextBox1.GetFirstCharIndexFromLine(line);
+            int column = index - firstCharIndex;
+
+            // Mostrar la información en una etiqueta
+            toolStripStatusLabelLineaCol.Text = $"Ln {line + 1}, Col {column + 1}   ";
         }
     }  
 }
