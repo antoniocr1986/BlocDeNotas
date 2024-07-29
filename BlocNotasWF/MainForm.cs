@@ -18,12 +18,19 @@ namespace BlocNotasWF
     public partial class MainForm : Form
     {
         private string archivoActual ="nuevoArchivo.txt";
+        Configuracion configuracion = null;
 
         public MainForm()
         {
             InitializeComponent();
 
             aplicarMargenes();
+
+            //PARA CONFIGURACION COLORES MENU STRIP
+            //menuStrip1.Renderer = new CustomMenuRenderer(); PENDIENTE DE VER SI USO O NO
+
+            //PARA CONFIGURACION MODO OSCURO Y CLARO
+
 
             //CODIGO PARA AÑADIR EVENTO AL CAMBIAR EL TEXTO DEL RICHTEXTBOX
             richTextBox1.TextChanged += RichTextBox1_TextChanged;
@@ -108,8 +115,29 @@ namespace BlocNotasWF
 
             return true;
         }
-#endregion
-            
+        #endregion
+
+        //PARA TEMA OSCURO O CLARO
+        private void ApplyTheme(bool isDarkMode)
+        {
+            Color background = isDarkMode ? ThemeColors.DarkBackground : ThemeColors.LightBackground;
+            Color text = isDarkMode ? ThemeColors.DarkText : ThemeColors.LightText;
+            Color buttonBackground = isDarkMode ? ThemeColors.DarkButtonBackground : ThemeColors.LightButtonBackground;
+            Color buttonText = isDarkMode ? ThemeColors.DarkButtonText : ThemeColors.LightButtonText;
+
+            this.BackColor = background;
+            foreach (Control control in this.Controls)
+            {
+                control.BackColor = background;
+                control.ForeColor = text;
+
+                if (control is Button || control is ToolStripButton)
+                {
+                    control.BackColor = buttonBackground;
+                    control.ForeColor = buttonText;
+                }
+            }
+        }
 
         public void AbrirToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -423,18 +451,17 @@ namespace BlocNotasWF
 
         private void pictureBoxConfig_Click(object sender, EventArgs e)
         {
-            Configuracion configuracion = new Configuracion(this);
+            if (configuracion == null || configuracion.IsDisposed)
+            {
+                configuracion = new Configuracion(this);
 
-            configuracion.Show();
-            /*
-            // Define el nombre del paquete de tu aplicación (esto puede variar según tu aplicación)
-            string packageName = "Bloc de notas by Antonio Company";
+                configuracion.Show();
+            }
+            else
+            {
+                configuracion.BringToFront();
+            }
 
-            
-
-            // Abre la configuración de la aplicación en la página específica
-            Process.Start("ms-settings:appsfeatures", packageName);//TODO hacer que habra especificamente la seccion de mi aplicacion
-            */
         }
 
         private void deshacerToolStripMenuItem_Click(object sender, EventArgs e)
@@ -445,7 +472,7 @@ namespace BlocNotasWF
             }
         }
 
-        private void activarToolStripMenuItem_Click(object sender, EventArgs e)
+        public void activarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CheckSpelling(richTextBox1);
         }

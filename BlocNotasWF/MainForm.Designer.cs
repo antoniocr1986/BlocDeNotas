@@ -32,7 +32,7 @@ namespace BlocNotasWF
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.achivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.abrirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.guardarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.guardarComoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -92,7 +92,7 @@ namespace BlocNotasWF
             this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
             this.menuStrip1.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.achivoToolStripMenuItem,
+            this.archivoToolStripMenuItem,
             this.editarToolStripMenuItem,
             this.verToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -101,9 +101,10 @@ namespace BlocNotasWF
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // achivoToolStripMenuItem
+            // archivoToolStripMenuItem
             // 
-            this.achivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.archivoToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
+            this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.abrirToolStripMenuItem,
             this.guardarToolStripMenuItem,
             this.guardarComoToolStripMenuItem,
@@ -112,14 +113,16 @@ namespace BlocNotasWF
             this.imprimirToolStripMenuItem,
             this.toolStripSeparator4,
             this.salirToolStripMenuItem});
-            this.achivoToolStripMenuItem.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.achivoToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Control;
-            this.achivoToolStripMenuItem.Name = "achivoToolStripMenuItem";
-            this.achivoToolStripMenuItem.Size = new System.Drawing.Size(68, 22);
-            this.achivoToolStripMenuItem.Text = "Achivo";
+            this.archivoToolStripMenuItem.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.archivoToolStripMenuItem.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
+            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(68, 22);
+            this.archivoToolStripMenuItem.Text = "Achivo";
             // 
             // abrirToolStripMenuItem
             // 
+            this.abrirToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
+            this.abrirToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.abrirToolStripMenuItem.Name = "abrirToolStripMenuItem";
             this.abrirToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
             this.abrirToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
@@ -128,6 +131,8 @@ namespace BlocNotasWF
             // 
             // guardarToolStripMenuItem
             // 
+            this.guardarToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
+            this.guardarToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.guardarToolStripMenuItem.Name = "guardarToolStripMenuItem";
             this.guardarToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.G)));
             this.guardarToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
@@ -136,6 +141,8 @@ namespace BlocNotasWF
             // 
             // guardarComoToolStripMenuItem
             // 
+            this.guardarComoToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
+            this.guardarComoToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.guardarComoToolStripMenuItem.Name = "guardarComoToolStripMenuItem";
             this.guardarComoToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
             this.guardarComoToolStripMenuItem.Text = "Guardar como...";
@@ -143,11 +150,14 @@ namespace BlocNotasWF
             // 
             // toolStripSeparator3
             // 
+            this.toolStripSeparator3.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(209, 6);
             // 
             // configurarPáginaToolStripMenuItem
             // 
+            this.configurarPáginaToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
+            this.configurarPáginaToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.configurarPáginaToolStripMenuItem.Name = "configurarPáginaToolStripMenuItem";
             this.configurarPáginaToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
             this.configurarPáginaToolStripMenuItem.Text = "Configurar página";
@@ -155,6 +165,8 @@ namespace BlocNotasWF
             // 
             // imprimirToolStripMenuItem
             // 
+            this.imprimirToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
+            this.imprimirToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.imprimirToolStripMenuItem.Name = "imprimirToolStripMenuItem";
             this.imprimirToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
             this.imprimirToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
@@ -163,11 +175,15 @@ namespace BlocNotasWF
             // 
             // toolStripSeparator4
             // 
+            this.toolStripSeparator4.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.toolStripSeparator4.ForeColor = System.Drawing.SystemColors.ControlText;
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(209, 6);
             // 
             // salirToolStripMenuItem
             // 
+            this.salirToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
+            this.salirToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
             this.salirToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
             this.salirToolStripMenuItem.Text = "Salir";
@@ -175,6 +191,7 @@ namespace BlocNotasWF
             // 
             // editarToolStripMenuItem
             // 
+            this.editarToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
             this.editarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.deshacerToolStripMenuItem1,
             this.toolStripSeparator,
@@ -190,42 +207,50 @@ namespace BlocNotasWF
             this.formatoToolStripMenuItem1,
             this.colorToolStripMenuItem1});
             this.editarToolStripMenuItem.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.editarToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Control;
+            this.editarToolStripMenuItem.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
             this.editarToolStripMenuItem.Size = new System.Drawing.Size(68, 22);
             this.editarToolStripMenuItem.Text = "Editar";
             // 
             // cortarToolStripMenuItem
             // 
+            this.cortarToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
+            this.cortarToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.cortarToolStripMenuItem.Name = "cortarToolStripMenuItem";
             this.cortarToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-            this.cortarToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+            this.cortarToolStripMenuItem.Size = new System.Drawing.Size(260, 22);
             this.cortarToolStripMenuItem.Text = "Cortar";
             this.cortarToolStripMenuItem.Click += new System.EventHandler(this.CortarToolStripMenuItem_Click);
             // 
             // copiarToolStripMenuItem
             // 
+            this.copiarToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
+            this.copiarToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.copiarToolStripMenuItem.Name = "copiarToolStripMenuItem";
             this.copiarToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
-            this.copiarToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+            this.copiarToolStripMenuItem.Size = new System.Drawing.Size(260, 22);
             this.copiarToolStripMenuItem.Text = "Copiar";
             this.copiarToolStripMenuItem.Click += new System.EventHandler(this.CopiarToolStripMenuItem_Click);
             // 
             // pegarToolStripMenuItem
             // 
+            this.pegarToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
+            this.pegarToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.pegarToolStripMenuItem.Name = "pegarToolStripMenuItem";
             this.pegarToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
-            this.pegarToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+            this.pegarToolStripMenuItem.Size = new System.Drawing.Size(260, 22);
             this.pegarToolStripMenuItem.Text = "Pegar";
             this.pegarToolStripMenuItem.Click += new System.EventHandler(this.PegarToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(201, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(257, 6);
             // 
             // buscarToolStripMenuItem
             // 
+            this.buscarToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
+            this.buscarToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.buscarToolStripMenuItem.Name = "buscarToolStripMenuItem";
             this.buscarToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.B)));
             this.buscarToolStripMenuItem.Size = new System.Drawing.Size(260, 22);
@@ -234,6 +259,8 @@ namespace BlocNotasWF
             // 
             // seleccionarTodoToolStripMenuItem
             // 
+            this.seleccionarTodoToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
+            this.seleccionarTodoToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.seleccionarTodoToolStripMenuItem.Name = "seleccionarTodoToolStripMenuItem";
             this.seleccionarTodoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
             this.seleccionarTodoToolStripMenuItem.Size = new System.Drawing.Size(260, 22);
@@ -242,6 +269,8 @@ namespace BlocNotasWF
             // 
             // fechaYHoraToolStripMenuItem
             // 
+            this.fechaYHoraToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
+            this.fechaYHoraToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.fechaYHoraToolStripMenuItem.Name = "fechaYHoraToolStripMenuItem";
             this.fechaYHoraToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5;
             this.fechaYHoraToolStripMenuItem.Size = new System.Drawing.Size(260, 22);
@@ -251,39 +280,46 @@ namespace BlocNotasWF
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(201, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(257, 6);
             // 
             // formatoToolStripMenuItem1
             // 
+            this.formatoToolStripMenuItem1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
+            this.formatoToolStripMenuItem1.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.formatoToolStripMenuItem1.Name = "formatoToolStripMenuItem1";
-            this.formatoToolStripMenuItem1.Size = new System.Drawing.Size(204, 22);
+            this.formatoToolStripMenuItem1.Size = new System.Drawing.Size(260, 22);
             this.formatoToolStripMenuItem1.Text = "Fuente";
             this.formatoToolStripMenuItem1.Click += new System.EventHandler(this.FuenteToolStripMenuItem1_Click);
             // 
             // colorToolStripMenuItem1
             // 
+            this.colorToolStripMenuItem1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
+            this.colorToolStripMenuItem1.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.colorToolStripMenuItem1.Name = "colorToolStripMenuItem1";
-            this.colorToolStripMenuItem1.Size = new System.Drawing.Size(204, 22);
+            this.colorToolStripMenuItem1.Size = new System.Drawing.Size(260, 22);
             this.colorToolStripMenuItem1.Text = "Color";
             this.colorToolStripMenuItem1.Click += new System.EventHandler(this.ColorToolStripMenuItem1_Click);
             // 
             // verToolStripMenuItem
             // 
+            this.verToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
             this.verToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.zoomToolStripMenuItem,
             this.barraDeEstadoToolStripMenuItem});
             this.verToolStripMenuItem.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.verToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Control;
+            this.verToolStripMenuItem.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.verToolStripMenuItem.Name = "verToolStripMenuItem";
             this.verToolStripMenuItem.Size = new System.Drawing.Size(44, 22);
             this.verToolStripMenuItem.Text = "Ver";
             // 
             // zoomToolStripMenuItem
             // 
+            this.zoomToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
             this.zoomToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aumentarToolStripMenuItem,
             this.reducirToolStripMenuItem,
             this.restablecerZoomOriginalToolStripMenuItem});
+            this.zoomToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.zoomToolStripMenuItem.Name = "zoomToolStripMenuItem";
             this.zoomToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             this.zoomToolStripMenuItem.Text = "Zoom";
@@ -311,8 +347,10 @@ namespace BlocNotasWF
             // 
             // barraDeEstadoToolStripMenuItem
             // 
+            this.barraDeEstadoToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
             this.barraDeEstadoToolStripMenuItem.Checked = true;
             this.barraDeEstadoToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.barraDeEstadoToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.barraDeEstadoToolStripMenuItem.Name = "barraDeEstadoToolStripMenuItem";
             this.barraDeEstadoToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             this.barraDeEstadoToolStripMenuItem.Text = "Barra de estado";
@@ -461,21 +499,25 @@ namespace BlocNotasWF
             // 
             // deshacerToolStripMenuItem1
             // 
+            this.deshacerToolStripMenuItem1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
+            this.deshacerToolStripMenuItem1.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.deshacerToolStripMenuItem1.Name = "deshacerToolStripMenuItem1";
-            this.deshacerToolStripMenuItem1.Size = new System.Drawing.Size(204, 22);
+            this.deshacerToolStripMenuItem1.Size = new System.Drawing.Size(260, 22);
             this.deshacerToolStripMenuItem1.Text = "Deshacer";
             this.deshacerToolStripMenuItem1.Click += new System.EventHandler(this.deshacerToolStripMenuItem_Click);
             // 
             // toolStripSeparator
             // 
             this.toolStripSeparator.Name = "toolStripSeparator";
-            this.toolStripSeparator.Size = new System.Drawing.Size(201, 6);
+            this.toolStripSeparator.Size = new System.Drawing.Size(257, 6);
             // 
             // eliminarToolStripMenuItem
             // 
+            this.eliminarToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
+            this.eliminarToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
             this.eliminarToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.Delete;
-            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(260, 22);
             this.eliminarToolStripMenuItem.Text = "Eliminar";
             this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
             // 
@@ -509,7 +551,7 @@ namespace BlocNotasWF
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem achivoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem abrirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem guardarToolStripMenuItem;
         private System.Windows.Forms.ColorDialog colorDialog1;

@@ -25,12 +25,24 @@ namespace BlocNotasWF
         private void Configuracion_Load(object sender, EventArgs e)
         {
 
-        }   
+        }
 
+        #region mostrarContextMenuStrips
         private void labelFormato_Click(object sender, EventArgs e)
         {
             contextMenuStripFormato.Show(Cursor.Position);
         }
+
+        private void labelApariencia_Click(object sender, EventArgs e)
+        {
+            contextMenuStripApariencia.Show(Cursor.Position);
+        }
+
+        private void labelOrtografia_Click(object sender, EventArgs e)
+        {
+            contextMenuStripOrtografia.Show(Cursor.Position);
+        }
+        #endregion
 
         private void buttonSoporteTecnico_Click(object sender, EventArgs e)
         {
@@ -153,5 +165,32 @@ namespace BlocNotasWF
             cambiarEstiloTexto(sender, e, FontStyle.Bold | FontStyle.Italic);
         }
         #endregion
+
+        #region cambiar AparienciaAplicación
+
+        private void claroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            mainform.BackColor = Color.White; 
+            mainform.ForeColor = Color.FromArgb(54, 54, 54);
+            mainform.richTextBox1.BackColor = Color.White;
+            mainform.richTextBox1.ForeColor = Color.FromArgb(54, 54, 54);
+        }
+
+        private void oscuroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            mainform.BackColor = Color.FromArgb(54, 54, 54);
+            mainform.ForeColor = Color.White;
+            mainform.richTextBox1.BackColor = Color.FromArgb(44, 44, 44);
+            mainform.richTextBox1.ForeColor = Color.White;
+        }
+
+        #endregion
+
+        private void correctorOrtografíaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            mainform.activarToolStripMenuItem_Click(sender, e);
+        }
+
+       
     }
 }
