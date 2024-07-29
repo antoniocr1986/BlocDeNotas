@@ -461,6 +461,7 @@ namespace BlocNotasWF
             this.toolStripStatusLabelCodification});
             this.statusStrip1.Location = new System.Drawing.Point(0, 289);
             this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.ShowItemToolTips = true;
             this.statusStrip1.Size = new System.Drawing.Size(544, 22);
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
@@ -471,8 +472,8 @@ namespace BlocNotasWF
             this.toolStripStatusLabelWords.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.toolStripStatusLabelWords.Margin = new System.Windows.Forms.Padding(0, 3, 20, 2);
             this.toolStripStatusLabelWords.Name = "toolStripStatusLabelWords";
-            this.toolStripStatusLabelWords.Size = new System.Drawing.Size(84, 17);
-            this.toolStripStatusLabelWords.Text = "Palabras: 0";
+            this.toolStripStatusLabelWords.Size = new System.Drawing.Size(98, 17);
+            this.toolStripStatusLabelWords.Text = "Palabras: 0  ";
             // 
             // toolStripStatusLabelZoom
             // 
@@ -480,8 +481,9 @@ namespace BlocNotasWF
             this.toolStripStatusLabelZoom.ForeColor = System.Drawing.SystemColors.Control;
             this.toolStripStatusLabelZoom.Margin = new System.Windows.Forms.Padding(0, 3, 20, 2);
             this.toolStripStatusLabelZoom.Name = "toolStripStatusLabelZoom";
-            this.toolStripStatusLabelZoom.Size = new System.Drawing.Size(77, 17);
-            this.toolStripStatusLabelZoom.Text = "Zoom: 100%";
+            this.toolStripStatusLabelZoom.Size = new System.Drawing.Size(35, 17);
+            this.toolStripStatusLabelZoom.Text = "100%";
+            this.toolStripStatusLabelZoom.ToolTipText = "Zoom";
             // 
             // toolStripStatusLabelCodification
             // 
@@ -536,6 +538,7 @@ namespace BlocNotasWF
             this.toolStripStatusLabelLineaCol.Name = "toolStripStatusLabelLineaCol";
             this.toolStripStatusLabelLineaCol.Size = new System.Drawing.Size(105, 17);
             this.toolStripStatusLabelLineaCol.Text = "Lin 1, Col 1  ";
+            this.toolStripStatusLabelLineaCol.ToolTipText = "Línea , Columna";
             // 
             // toolStripStatusSpacer1
             // 

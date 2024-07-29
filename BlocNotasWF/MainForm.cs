@@ -18,7 +18,7 @@ namespace BlocNotasWF
     public partial class MainForm : Form
     {
         private string archivoActual ="nuevoArchivo.txt";
-        Configuracion configuracion = null;
+        private Configuracion configuracion = null;
 
         public MainForm()
         {
@@ -393,7 +393,7 @@ namespace BlocNotasWF
         public void ZoomStatusLabel_Changed(object sender, EventArgs e)
         {
             int valor = Convert.ToInt32(richTextBox1.ZoomFactor * 100);
-            toolStripStatusLabelZoom.Text = $"Zoom: {valor} %";
+            toolStripStatusLabelZoom.Text = $" {valor} %";
         }
         #endregion
 
@@ -408,6 +408,14 @@ namespace BlocNotasWF
         {
             int wordCount = richTextBox1.Text.Split(new char[] { ' ', '\t', '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries).Length;
             toolStripStatusLabelWords.Text = "Palabras: " + wordCount;
+            if (wordCount < 10)
+            {
+                toolStripStatusLabelWords.Text = toolStripStatusLabelWords.Text + "  ";
+            }
+            else if (wordCount < 100)
+            {
+                toolStripStatusLabelWords.Text = toolStripStatusLabelWords.Text + " ";
+            }
         }
 
         #endregion
@@ -447,7 +455,7 @@ namespace BlocNotasWF
 
         private void pictureBoxConfig_Click(object sender, EventArgs e)
         {
-            if (configuracion == null |configuracion.IsDisposed)
+            if (configuracion == null || configuracion.IsDisposed)
             {
                 configuracion = new Configuracion(this);
 
@@ -522,6 +530,22 @@ namespace BlocNotasWF
 
             // Mostrar la información en una etiqueta
             toolStripStatusLabelLineaCol.Text = $"Ln {line + 1}, Col {column + 1}";
+            if (line + 1 < 10)
+            {
+                toolStripStatusLabelLineaCol.Text = toolStripStatusLabelLineaCol.Text +"  ";
+            }
+            else if (line + 1 < 100)
+            {
+                toolStripStatusLabelLineaCol.Text = toolStripStatusLabelLineaCol.Text + " ";
+            }
+            if (column + 1 < 10)
+            {
+                toolStripStatusLabelLineaCol.Text = toolStripStatusLabelLineaCol.Text + "  ";
+            }
+            else if(column + 1 < 100)
+            {
+                toolStripStatusLabelLineaCol.Text = toolStripStatusLabelLineaCol.Text + " ";
+            }
         }
     }  
 }
