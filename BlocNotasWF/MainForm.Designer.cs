@@ -82,6 +82,9 @@ namespace BlocNotasWF
             this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripStatusLabelLineaCol = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusSpacer1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusSpacer2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusSpacer3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1.SuspendLayout();
             this.contextMenuStripMain.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -98,7 +101,7 @@ namespace BlocNotasWF
             this.verToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(519, 26);
+            this.menuStrip1.Size = new System.Drawing.Size(544, 26);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -368,7 +371,7 @@ namespace BlocNotasWF
             this.richTextBox1.ForeColor = System.Drawing.SystemColors.Window;
             this.richTextBox1.Location = new System.Drawing.Point(0, 26);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(519, 285);
+            this.richTextBox1.Size = new System.Drawing.Size(544, 285);
             this.richTextBox1.TabIndex = 1;
             this.richTextBox1.Text = "";
             this.richTextBox1.SelectionChanged += new System.EventHandler(this.richTextBox1_SelectionChanged);
@@ -450,12 +453,15 @@ namespace BlocNotasWF
             this.statusStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 80, 2);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabelLineaCol,
+            this.toolStripStatusSpacer1,
             this.toolStripStatusLabelWords,
+            this.toolStripStatusSpacer2,
             this.toolStripStatusLabelZoom,
+            this.toolStripStatusSpacer3,
             this.toolStripStatusLabelCodification});
             this.statusStrip1.Location = new System.Drawing.Point(0, 289);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(519, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(544, 22);
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -493,7 +499,7 @@ namespace BlocNotasWF
             this.pictureBoxConfig.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBoxConfig.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
             this.pictureBoxConfig.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxConfig.Image")));
-            this.pictureBoxConfig.Location = new System.Drawing.Point(480, 0);
+            this.pictureBoxConfig.Location = new System.Drawing.Point(505, 0);
             this.pictureBoxConfig.Name = "pictureBoxConfig";
             this.pictureBoxConfig.Size = new System.Drawing.Size(27, 26);
             this.pictureBoxConfig.TabIndex = 3;
@@ -528,22 +534,43 @@ namespace BlocNotasWF
             // 
             this.toolStripStatusLabelLineaCol.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.toolStripStatusLabelLineaCol.Name = "toolStripStatusLabelLineaCol";
-            this.toolStripStatusLabelLineaCol.Size = new System.Drawing.Size(91, 17);
-            this.toolStripStatusLabelLineaCol.Text = "Lin 1, Col 1";
+            this.toolStripStatusLabelLineaCol.Size = new System.Drawing.Size(105, 17);
+            this.toolStripStatusLabelLineaCol.Text = "Lin 1, Col 1  ";
+            // 
+            // toolStripStatusSpacer1
+            // 
+            this.toolStripStatusSpacer1.ForeColor = System.Drawing.SystemColors.Control;
+            this.toolStripStatusSpacer1.Name = "toolStripStatusSpacer1";
+            this.toolStripStatusSpacer1.Size = new System.Drawing.Size(14, 17);
+            this.toolStripStatusSpacer1.Text = "|";
+            // 
+            // toolStripStatusSpacer2
+            // 
+            this.toolStripStatusSpacer2.ForeColor = System.Drawing.SystemColors.Control;
+            this.toolStripStatusSpacer2.Name = "toolStripStatusSpacer2";
+            this.toolStripStatusSpacer2.Size = new System.Drawing.Size(14, 17);
+            this.toolStripStatusSpacer2.Text = "|";
+            // 
+            // toolStripStatusSpacer3
+            // 
+            this.toolStripStatusSpacer3.ForeColor = System.Drawing.SystemColors.Control;
+            this.toolStripStatusSpacer3.Name = "toolStripStatusSpacer3";
+            this.toolStripStatusSpacer3.Size = new System.Drawing.Size(14, 17);
+            this.toolStripStatusSpacer3.Text = "|";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(519, 311);
+            this.ClientSize = new System.Drawing.Size(544, 311);
             this.Controls.Add(this.pictureBoxConfig);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.MinimumSize = new System.Drawing.Size(400, 150);
+            this.MinimumSize = new System.Drawing.Size(560, 150);
             this.Name = "MainForm";
             this.Text = "Bloc de notas";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
@@ -611,6 +638,9 @@ namespace BlocNotasWF
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
         private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelLineaCol;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusSpacer1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusSpacer2;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusSpacer3;
     }
 }
 

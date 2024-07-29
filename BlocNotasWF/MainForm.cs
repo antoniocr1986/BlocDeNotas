@@ -447,7 +447,7 @@ namespace BlocNotasWF
 
         private void pictureBoxConfig_Click(object sender, EventArgs e)
         {
-            if (configuracion == null || configuracion.IsDisposed)
+            if (configuracion == null |configuracion.IsDisposed)
             {
                 configuracion = new Configuracion(this);
 
@@ -521,7 +521,7 @@ namespace BlocNotasWF
             int column = index - firstCharIndex;
 
             // Mostrar la información en una etiqueta
-            toolStripStatusLabelLineaCol.Text = $"Ln {line + 1}, Col {column + 1}   ";
+            toolStripStatusLabelLineaCol.Text = $"Ln {line + 1}, Col {column + 1}";
         }
     }  
 }
