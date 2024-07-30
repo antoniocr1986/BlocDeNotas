@@ -19,17 +19,12 @@ namespace BlocNotasWF
     {
         private string archivoActual ="nuevoArchivo.txt";
         private Configuracion configuracion = null;
-        private string tituloVentana = "Bloc de notas: principal";
-        int openFormCount = System.Windows.Forms.Application.OpenForms.Count;
 
         public MainForm()
         {
             InitializeComponent();
 
-            aplicarMargenes();      
-
-            if (openFormCount < 1)
-                this.Text = tituloVentana;
+            aplicarMargenes();
 
             //PARA CONFIGURACION COLORES MENU STRIP
             //menuStrip1.Renderer = new CustomMenuRenderer(); PENDIENTE DE VER SI USO O NO
@@ -428,42 +423,28 @@ namespace BlocNotasWF
         #region metodos salir y cerrar
         public void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Form closingForm = sender as Form;
-
-            int openFormCount = System.Windows.Forms.Application.OpenForms.Count;
-
-            if (openFormCount > 1)
+            if (e.CloseReason == CloseReason.UserClosing)
             {
-                //if (closingForm.Text != tituloVentana)
-                  //  e.Cancel = true;
-                //else    
-                //    MessageBox.Show("No se puede cerrar la ventana principal mientras tengas otras ventanas abiertas en la aplicación, actualmente tienes abiertas " + openFormCount + " ventanas.");
-            }
-            else
-            {
-                if (e.CloseReason == CloseReason.UserClosing)
+                DialogResult result = MessageBox.Show("¿Quiere cerrar sin guardar?",
+                                                      "Cerrar aplicación",
+                                                      MessageBoxButtons.YesNoCancel,
+                                                      MessageBoxIcon.Question);
+
+                if (result == DialogResult.No)
                 {
-                    DialogResult result = MessageBox.Show("¿Quiere cerrar sin guardar?",
-                                                          "Cerrar aplicación",
-                                                          MessageBoxButtons.YesNoCancel,
-                                                          MessageBoxIcon.Question);
-
-                    if (result == DialogResult.No)
-                    {
-                        e.Cancel = true;
-                        GuardarToolStripMenuItem_Click(sender, e);
-                    }
-                    else if (result == DialogResult.Yes)
-
-                    {
-                        Environment.Exit(0);
-                    }
-                    else
-                    {
-                        e.Cancel = true;
-                    }
+                    e.Cancel = true;
+                    GuardarToolStripMenuItem_Click(sender, e);
                 }
-            }             
+                else if (result == DialogResult.Yes)
+
+                {
+                    Environment.Exit(0);
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+            }
         }
 
         public void SalirToolStripMenuItem_Click(object sender, EventArgs e)
@@ -494,7 +475,6 @@ namespace BlocNotasWF
                 richTextBox1.Undo();
             }
         }
-        #region métodosOrtografia
 
         public void activarToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -534,28 +514,11 @@ namespace BlocNotasWF
 
             MessageBox.Show("Revisión ortográfica completa.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-        #endregion
 
-        #region metodosEliminar
         private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            eliminarTexto(sender, e);
-        }
 
-        private void eliminarToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            eliminarTexto(sender, e);
         }
-
-        public void eliminarTexto (object sender, EventArgs e)
-        {
-            // Eliminar el texto seleccionado en el RichTextBox
-            if (!string.IsNullOrEmpty(this.richTextBox1.SelectedText))
-            {
-                this.richTextBox1.SelectedText = "";
-            }
-        }
-        #endregion
 
         private void richTextBox1_SelectionChanged(object sender, EventArgs e)
         {
@@ -584,18 +547,5 @@ namespace BlocNotasWF
                 toolStripStatusLabelLineaCol.Text = toolStripStatusLabelLineaCol.Text + " ";
             }
         }
-
-        private void nuevaPestañaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void nuevaVentanaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MainForm mainform2 = new MainForm();
-            mainform2.Show();
-        }
-
-       
     }  
 }

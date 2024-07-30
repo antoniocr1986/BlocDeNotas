@@ -51,3 +51,4 @@ C:\Users\anton\OneDrive\Escritorio\Git julio\BlocDeNotas\BlocNotasWF\obj\Debug\B
 C:\Users\anton\OneDrive\Escritorio\Git julio\BlocDeNotas\BlocNotasWF\obj\Debug\BlocNotasWF.exe
 C:\Users\anton\OneDrive\Escritorio\Git julio\BlocDeNotas\BlocNotasWF\obj\Debug\BlocNotasWF.pdb
 C:\Users\anton\OneDrive\Escritorio\Git julio\BlocDeNotas\BlocNotasWF\obj\Debug\BlocNotasWF.Configuracion.resources
+C:\Users\anton\OneDrive\Escritorio\Git julio\BlocDeNotas\BlocNotasWF\obj\Debug\BlocNotasWF.Pestañas.resources

@@ -42,12 +42,9 @@ namespace BlocNotasWF
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deshacerToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.cortarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.copiarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pegarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.buscarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.seleccionarTodoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -75,19 +72,19 @@ namespace BlocNotasWF
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabelLineaCol = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusSpacer1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabelWords = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusSpacer2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabelZoom = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusSpacer3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabelCodification = new System.Windows.Forms.ToolStripStatusLabel();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.pageSetupDialog1 = new System.Windows.Forms.PageSetupDialog();
             this.pictureBoxConfig = new System.Windows.Forms.PictureBox();
-            this.nuevaPestañaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nuevaVentanaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.eliminarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.deshacerToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripStatusLabelLineaCol = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusSpacer1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusSpacer2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusSpacer3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1.SuspendLayout();
             this.contextMenuStripMain.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -112,8 +109,6 @@ namespace BlocNotasWF
             // 
             this.archivoToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
             this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.nuevaPestañaToolStripMenuItem,
-            this.nuevaVentanaToolStripMenuItem,
             this.abrirToolStripMenuItem,
             this.guardarToolStripMenuItem,
             this.guardarComoToolStripMenuItem,
@@ -134,7 +129,7 @@ namespace BlocNotasWF
             this.abrirToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.abrirToolStripMenuItem.Name = "abrirToolStripMenuItem";
             this.abrirToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
-            this.abrirToolStripMenuItem.Size = new System.Drawing.Size(236, 22);
+            this.abrirToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
             this.abrirToolStripMenuItem.Text = "Abrir";
             this.abrirToolStripMenuItem.Click += new System.EventHandler(this.AbrirToolStripMenuItem_Click);
             // 
@@ -144,7 +139,7 @@ namespace BlocNotasWF
             this.guardarToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.guardarToolStripMenuItem.Name = "guardarToolStripMenuItem";
             this.guardarToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.G)));
-            this.guardarToolStripMenuItem.Size = new System.Drawing.Size(236, 22);
+            this.guardarToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
             this.guardarToolStripMenuItem.Text = "Guardar";
             this.guardarToolStripMenuItem.Click += new System.EventHandler(this.GuardarToolStripMenuItem_Click);
             // 
@@ -153,7 +148,7 @@ namespace BlocNotasWF
             this.guardarComoToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
             this.guardarComoToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.guardarComoToolStripMenuItem.Name = "guardarComoToolStripMenuItem";
-            this.guardarComoToolStripMenuItem.Size = new System.Drawing.Size(236, 22);
+            this.guardarComoToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
             this.guardarComoToolStripMenuItem.Text = "Guardar como...";
             this.guardarComoToolStripMenuItem.Click += new System.EventHandler(this.GuardarComoToolStripMenuItem_Click);
             // 
@@ -161,14 +156,14 @@ namespace BlocNotasWF
             // 
             this.toolStripSeparator3.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(233, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(209, 6);
             // 
             // configurarPáginaToolStripMenuItem
             // 
             this.configurarPáginaToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
             this.configurarPáginaToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.configurarPáginaToolStripMenuItem.Name = "configurarPáginaToolStripMenuItem";
-            this.configurarPáginaToolStripMenuItem.Size = new System.Drawing.Size(236, 22);
+            this.configurarPáginaToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
             this.configurarPáginaToolStripMenuItem.Text = "Configurar página";
             this.configurarPáginaToolStripMenuItem.Click += new System.EventHandler(this.ConfigurarPáginaToolStripMenuItem_Click);
             // 
@@ -178,7 +173,7 @@ namespace BlocNotasWF
             this.imprimirToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.imprimirToolStripMenuItem.Name = "imprimirToolStripMenuItem";
             this.imprimirToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
-            this.imprimirToolStripMenuItem.Size = new System.Drawing.Size(236, 22);
+            this.imprimirToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
             this.imprimirToolStripMenuItem.Text = "Imprimir";
             this.imprimirToolStripMenuItem.Click += new System.EventHandler(this.ImprimirToolStripMenuItem_Click);
             // 
@@ -187,14 +182,14 @@ namespace BlocNotasWF
             this.toolStripSeparator4.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.toolStripSeparator4.ForeColor = System.Drawing.SystemColors.ControlText;
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(233, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(209, 6);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
             this.salirToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(236, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.SalirToolStripMenuItem_Click);
             // 
@@ -220,20 +215,6 @@ namespace BlocNotasWF
             this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
             this.editarToolStripMenuItem.Size = new System.Drawing.Size(68, 22);
             this.editarToolStripMenuItem.Text = "Editar";
-            // 
-            // deshacerToolStripMenuItem1
-            // 
-            this.deshacerToolStripMenuItem1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
-            this.deshacerToolStripMenuItem1.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.deshacerToolStripMenuItem1.Name = "deshacerToolStripMenuItem1";
-            this.deshacerToolStripMenuItem1.Size = new System.Drawing.Size(260, 22);
-            this.deshacerToolStripMenuItem1.Text = "Deshacer";
-            this.deshacerToolStripMenuItem1.Click += new System.EventHandler(this.deshacerToolStripMenuItem_Click);
-            // 
-            // toolStripSeparator
-            // 
-            this.toolStripSeparator.Name = "toolStripSeparator";
-            this.toolStripSeparator.Size = new System.Drawing.Size(257, 6);
             // 
             // cortarToolStripMenuItem
             // 
@@ -264,16 +245,6 @@ namespace BlocNotasWF
             this.pegarToolStripMenuItem.Size = new System.Drawing.Size(260, 22);
             this.pegarToolStripMenuItem.Text = "Pegar";
             this.pegarToolStripMenuItem.Click += new System.EventHandler(this.PegarToolStripMenuItem_Click);
-            // 
-            // eliminarToolStripMenuItem
-            // 
-            this.eliminarToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
-            this.eliminarToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
-            this.eliminarToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.Delete;
-            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(260, 22);
-            this.eliminarToolStripMenuItem.Text = "Eliminar";
-            this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
@@ -412,17 +383,16 @@ namespace BlocNotasWF
             this.cortarToolStripMenuItem1,
             this.copiarToolStripMenuItem1,
             this.pegarToolStripMenuItem1,
-            this.eliminarToolStripMenuItem1,
             this.seleccionarTodoToolStripMenuItem1,
             this.ortografiaToolStripMenuItem});
             this.contextMenuStripMain.Name = "contextMenuStripMain";
-            this.contextMenuStripMain.Size = new System.Drawing.Size(181, 180);
+            this.contextMenuStripMain.Size = new System.Drawing.Size(173, 136);
             // 
             // deshacerToolStripMenuItem
             // 
             this.deshacerToolStripMenuItem.Name = "deshacerToolStripMenuItem";
             this.deshacerToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
-            this.deshacerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.deshacerToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.deshacerToolStripMenuItem.Text = "Deshacer";
             this.deshacerToolStripMenuItem.Click += new System.EventHandler(this.deshacerToolStripMenuItem_Click);
             // 
@@ -430,7 +400,7 @@ namespace BlocNotasWF
             // 
             this.cortarToolStripMenuItem1.Name = "cortarToolStripMenuItem1";
             this.cortarToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-            this.cortarToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.cortarToolStripMenuItem1.Size = new System.Drawing.Size(172, 22);
             this.cortarToolStripMenuItem1.Text = "Cortar";
             this.cortarToolStripMenuItem1.Click += new System.EventHandler(this.cortarToolStripMenuItem1_Click);
             // 
@@ -438,7 +408,7 @@ namespace BlocNotasWF
             // 
             this.copiarToolStripMenuItem1.Name = "copiarToolStripMenuItem1";
             this.copiarToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
-            this.copiarToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.copiarToolStripMenuItem1.Size = new System.Drawing.Size(172, 22);
             this.copiarToolStripMenuItem1.Text = "Copiar";
             this.copiarToolStripMenuItem1.Click += new System.EventHandler(this.copiarToolStripMenuItem1_Click);
             // 
@@ -446,14 +416,14 @@ namespace BlocNotasWF
             // 
             this.pegarToolStripMenuItem1.Name = "pegarToolStripMenuItem1";
             this.pegarToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
-            this.pegarToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.pegarToolStripMenuItem1.Size = new System.Drawing.Size(172, 22);
             this.pegarToolStripMenuItem1.Text = "Pegar";
             this.pegarToolStripMenuItem1.Click += new System.EventHandler(this.pegarToolStripMenuItem1_Click);
             // 
             // seleccionarTodoToolStripMenuItem1
             // 
             this.seleccionarTodoToolStripMenuItem1.Name = "seleccionarTodoToolStripMenuItem1";
-            this.seleccionarTodoToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.seleccionarTodoToolStripMenuItem1.Size = new System.Drawing.Size(172, 22);
             this.seleccionarTodoToolStripMenuItem1.Text = "Seleccionar Todo";
             this.seleccionarTodoToolStripMenuItem1.Click += new System.EventHandler(this.seleccionarTodoToolStripMenuItem1_Click);
             // 
@@ -462,13 +432,13 @@ namespace BlocNotasWF
             this.ortografiaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.OrtografiaActivarToolStripMenuItem});
             this.ortografiaToolStripMenuItem.Name = "ortografiaToolStripMenuItem";
-            this.ortografiaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ortografiaToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.ortografiaToolStripMenuItem.Text = "Corregir ortografía";
             // 
             // OrtografiaActivarToolStripMenuItem
             // 
             this.OrtografiaActivarToolStripMenuItem.Name = "OrtografiaActivarToolStripMenuItem";
-            this.OrtografiaActivarToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
+            this.OrtografiaActivarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.OrtografiaActivarToolStripMenuItem.Text = "Activar";
             this.OrtografiaActivarToolStripMenuItem.Click += new System.EventHandler(this.activarToolStripMenuItem_Click);
             // 
@@ -496,21 +466,6 @@ namespace BlocNotasWF
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // toolStripStatusLabelLineaCol
-            // 
-            this.toolStripStatusLabelLineaCol.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.toolStripStatusLabelLineaCol.Name = "toolStripStatusLabelLineaCol";
-            this.toolStripStatusLabelLineaCol.Size = new System.Drawing.Size(105, 17);
-            this.toolStripStatusLabelLineaCol.Text = "Lin 1, Col 1  ";
-            this.toolStripStatusLabelLineaCol.ToolTipText = "Línea , Columna";
-            // 
-            // toolStripStatusSpacer1
-            // 
-            this.toolStripStatusSpacer1.ForeColor = System.Drawing.SystemColors.Control;
-            this.toolStripStatusSpacer1.Name = "toolStripStatusSpacer1";
-            this.toolStripStatusSpacer1.Size = new System.Drawing.Size(14, 17);
-            this.toolStripStatusSpacer1.Text = "|";
-            // 
             // toolStripStatusLabelWords
             // 
             this.toolStripStatusLabelWords.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -519,13 +474,6 @@ namespace BlocNotasWF
             this.toolStripStatusLabelWords.Name = "toolStripStatusLabelWords";
             this.toolStripStatusLabelWords.Size = new System.Drawing.Size(98, 17);
             this.toolStripStatusLabelWords.Text = "Palabras: 0  ";
-            // 
-            // toolStripStatusSpacer2
-            // 
-            this.toolStripStatusSpacer2.ForeColor = System.Drawing.SystemColors.Control;
-            this.toolStripStatusSpacer2.Name = "toolStripStatusSpacer2";
-            this.toolStripStatusSpacer2.Size = new System.Drawing.Size(14, 17);
-            this.toolStripStatusSpacer2.Text = "|";
             // 
             // toolStripStatusLabelZoom
             // 
@@ -536,13 +484,6 @@ namespace BlocNotasWF
             this.toolStripStatusLabelZoom.Size = new System.Drawing.Size(35, 17);
             this.toolStripStatusLabelZoom.Text = "100%";
             this.toolStripStatusLabelZoom.ToolTipText = "Zoom";
-            // 
-            // toolStripStatusSpacer3
-            // 
-            this.toolStripStatusSpacer3.ForeColor = System.Drawing.SystemColors.Control;
-            this.toolStripStatusSpacer3.Name = "toolStripStatusSpacer3";
-            this.toolStripStatusSpacer3.Size = new System.Drawing.Size(14, 17);
-            this.toolStripStatusSpacer3.Text = "|";
             // 
             // toolStripStatusLabelCodification
             // 
@@ -567,32 +508,58 @@ namespace BlocNotasWF
             this.pictureBoxConfig.TabStop = false;
             this.pictureBoxConfig.Click += new System.EventHandler(this.pictureBoxConfig_Click);
             // 
-            // nuevaPestañaToolStripMenuItem
+            // deshacerToolStripMenuItem1
             // 
-            this.nuevaPestañaToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
-            this.nuevaPestañaToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.nuevaPestañaToolStripMenuItem.Name = "nuevaPestañaToolStripMenuItem";
-            this.nuevaPestañaToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.nuevaPestañaToolStripMenuItem.Size = new System.Drawing.Size(236, 22);
-            this.nuevaPestañaToolStripMenuItem.Text = "Nueva pestaña";
-            this.nuevaPestañaToolStripMenuItem.Click += new System.EventHandler(this.nuevaPestañaToolStripMenuItem_Click);
+            this.deshacerToolStripMenuItem1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
+            this.deshacerToolStripMenuItem1.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.deshacerToolStripMenuItem1.Name = "deshacerToolStripMenuItem1";
+            this.deshacerToolStripMenuItem1.Size = new System.Drawing.Size(260, 22);
+            this.deshacerToolStripMenuItem1.Text = "Deshacer";
+            this.deshacerToolStripMenuItem1.Click += new System.EventHandler(this.deshacerToolStripMenuItem_Click);
             // 
-            // nuevaVentanaToolStripMenuItem
+            // toolStripSeparator
             // 
-            this.nuevaVentanaToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
-            this.nuevaVentanaToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.nuevaVentanaToolStripMenuItem.Name = "nuevaVentanaToolStripMenuItem";
-            this.nuevaVentanaToolStripMenuItem.Size = new System.Drawing.Size(236, 22);
-            this.nuevaVentanaToolStripMenuItem.Text = "Nueva ventana";
-            this.nuevaVentanaToolStripMenuItem.Click += new System.EventHandler(this.nuevaVentanaToolStripMenuItem_Click);
+            this.toolStripSeparator.Name = "toolStripSeparator";
+            this.toolStripSeparator.Size = new System.Drawing.Size(257, 6);
             // 
-            // eliminarToolStripMenuItem1
+            // eliminarToolStripMenuItem
             // 
-            this.eliminarToolStripMenuItem1.Name = "eliminarToolStripMenuItem1";
-            this.eliminarToolStripMenuItem1.ShortcutKeys = System.Windows.Forms.Keys.Delete;
-            this.eliminarToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.eliminarToolStripMenuItem1.Text = "Eliminar";
-            this.eliminarToolStripMenuItem1.Click += new System.EventHandler(this.eliminarToolStripMenuItem1_Click);
+            this.eliminarToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
+            this.eliminarToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
+            this.eliminarToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.Delete;
+            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(260, 22);
+            this.eliminarToolStripMenuItem.Text = "Eliminar";
+            this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
+            // 
+            // toolStripStatusLabelLineaCol
+            // 
+            this.toolStripStatusLabelLineaCol.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.toolStripStatusLabelLineaCol.Name = "toolStripStatusLabelLineaCol";
+            this.toolStripStatusLabelLineaCol.Size = new System.Drawing.Size(105, 17);
+            this.toolStripStatusLabelLineaCol.Text = "Lin 1, Col 1  ";
+            this.toolStripStatusLabelLineaCol.ToolTipText = "Línea , Columna";
+            // 
+            // toolStripStatusSpacer1
+            // 
+            this.toolStripStatusSpacer1.ForeColor = System.Drawing.SystemColors.Control;
+            this.toolStripStatusSpacer1.Name = "toolStripStatusSpacer1";
+            this.toolStripStatusSpacer1.Size = new System.Drawing.Size(14, 17);
+            this.toolStripStatusSpacer1.Text = "|";
+            // 
+            // toolStripStatusSpacer2
+            // 
+            this.toolStripStatusSpacer2.ForeColor = System.Drawing.SystemColors.Control;
+            this.toolStripStatusSpacer2.Name = "toolStripStatusSpacer2";
+            this.toolStripStatusSpacer2.Size = new System.Drawing.Size(14, 17);
+            this.toolStripStatusSpacer2.Text = "|";
+            // 
+            // toolStripStatusSpacer3
+            // 
+            this.toolStripStatusSpacer3.ForeColor = System.Drawing.SystemColors.Control;
+            this.toolStripStatusSpacer3.Name = "toolStripStatusSpacer3";
+            this.toolStripStatusSpacer3.Size = new System.Drawing.Size(14, 17);
+            this.toolStripStatusSpacer3.Text = "|";
             // 
             // MainForm
             // 
@@ -677,9 +644,6 @@ namespace BlocNotasWF
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusSpacer1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusSpacer2;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusSpacer3;
-        private System.Windows.Forms.ToolStripMenuItem nuevaPestañaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem nuevaVentanaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem1;
     }
 }
 
