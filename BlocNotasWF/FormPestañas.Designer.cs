@@ -1,6 +1,6 @@
 ﻿namespace BlocNotasWF
 {
-    partial class Pestañas
+    partial class FormPestañas
     {
         /// <summary>
         /// Required designer variable.

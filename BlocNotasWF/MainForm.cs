@@ -17,7 +17,7 @@ namespace BlocNotasWF
 {
     public partial class MainForm : Form
     {
-        private string archivoActual ="nuevoArchivo.txt";
+        private string archivoActual = "nuevoArchivo.txt";
         private FormConfiguracion configuracion = null;
         private string tituloVentana = "Bloc de notas: principal";
         int openFormCount = System.Windows.Forms.Application.OpenForms.Count;
@@ -26,7 +26,7 @@ namespace BlocNotasWF
         {
             InitializeComponent();
 
-            aplicarMargenes();      
+            aplicarMargenes();
 
             if (openFormCount < 1)
                 this.Text = tituloVentana;
@@ -71,7 +71,7 @@ namespace BlocNotasWF
         {
             richTextBox1.SelectionIndent = 10; // Establecer el margen izquierdo en 10 píxeles
             richTextBox1.SelectionRightIndent = 10; // Establecer el margen derecho en 10 píxeles    
-                                                   
+
         }
 
         private Encoding TryDetectEncoding(string text)
@@ -176,7 +176,7 @@ namespace BlocNotasWF
             {
                 GuardarCambiosEnArchivo(archivoActual);
             }
-            
+
         }
 
         public void GuardarCambiosEnArchivo(string nombreArchivo)
@@ -442,7 +442,7 @@ namespace BlocNotasWF
             if (openFormCount > 1)
             {
                 //if (closingForm.Text != tituloVentana)
-                  //  e.Cancel = true;
+                //  e.Cancel = true;
                 //else    
                 //    MessageBox.Show("No se puede cerrar la ventana principal mientras tengas otras ventanas abiertas en la aplicación, actualmente tienes abiertas " + openFormCount + " ventanas.");
             }
@@ -470,7 +470,7 @@ namespace BlocNotasWF
                         e.Cancel = true;
                     }
                 }
-            }             
+            }
         }
 
         public void SalirToolStripMenuItem_Click(object sender, EventArgs e)
@@ -554,7 +554,7 @@ namespace BlocNotasWF
             eliminarTexto(sender, e);
         }
 
-        public void eliminarTexto (object sender, EventArgs e)
+        public void eliminarTexto(object sender, EventArgs e)
         {
             // Eliminar el texto seleccionado en el RichTextBox
             if (!string.IsNullOrEmpty(this.richTextBox1.SelectedText))
@@ -576,7 +576,7 @@ namespace BlocNotasWF
             toolStripStatusLabelLineaCol.Text = $"Ln {line + 1}, Col {column + 1}";
             if (line + 1 < 10)
             {
-                toolStripStatusLabelLineaCol.Text = toolStripStatusLabelLineaCol.Text +"  ";
+                toolStripStatusLabelLineaCol.Text = toolStripStatusLabelLineaCol.Text + "  ";
             }
             else if (line + 1 < 100)
             {
@@ -586,15 +586,10 @@ namespace BlocNotasWF
             {
                 toolStripStatusLabelLineaCol.Text = toolStripStatusLabelLineaCol.Text + "  ";
             }
-            else if(column + 1 < 100)
+            else if (column + 1 < 100)
             {
                 toolStripStatusLabelLineaCol.Text = toolStripStatusLabelLineaCol.Text + " ";
             }
-        }
-
-        private void nuevaPestañaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void nuevaVentanaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -620,5 +615,58 @@ namespace BlocNotasWF
             // Restaurar la posición del cursor
             richTextBox1.SelectionStart = posicionCursor;
         }
-    }  
+
+        public void buscarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormBuscar form2 = new FormBuscar();
+
+            form2.ShowDialog();
+
+            string textoBuscado = form2.GetTextBoxData();
+
+            if (!string.IsNullOrWhiteSpace(textoBuscado))
+            {
+                int index = 0;
+                int lastIndex = richTextBox1.TextLength;
+
+                while (index < lastIndex)
+                {
+                    index = richTextBox1.Find(textoBuscado, index, lastIndex, RichTextBoxFinds.None);
+                    if (index == -1)
+                        break;
+
+                    richTextBox1.SelectionBackColor = Color.Yellow;
+                    index += textoBuscado.Length;
+                }
+            }
+        }
+
+        private void buscarToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            {
+                FormBuscar form2 = new FormBuscar();
+
+                form2.ShowDialog();
+
+                string textoBuscado = form2.GetTextBoxData();
+
+                if (!string.IsNullOrWhiteSpace(textoBuscado))
+                {
+                    int index = 0;
+                    int lastIndex = richTextBox1.TextLength;
+
+                    while (index < lastIndex)
+                    {
+                        index = richTextBox1.Find(textoBuscado, index, lastIndex, RichTextBoxFinds.None);
+                        if (index == -1)
+                            MessageBox.Show("No se ha encontrado ningun texto que coincida con el texto buscado");
+                            break;
+
+                        richTextBox1.SelectionBackColor = Color.Yellow;
+                        index += textoBuscado.Length;
+                    }
+                }
+            }
+        }
+    }
 }

@@ -1,0 +1,19 @@
+FORMS
+MainForm -> Ventana principal
+FormConfiguración.cs -> Ventana Ajustes aplicación
+FormBuscar.cs-> Ventana buscar texto16:16 01/08/2024
+
+CLASES
+Program.cs-> código de inicio o main de la aplicación
+ThemeColors.cs-> Clase con colores predefenidos en variables publicas
+
+----------------------------------------------------------------------------------------------------
+CLASES SIN USO O CON USO POR IMPLEMENTAR
+FormPestañas.cs-> Clase sin uso en la cual comenzamos los primeros pasos para implementar el uso de pestañas en la aplicacion
+CustomMenuRenderer.cs-> Clase actualmente sin uso pero su objetivo era contener propiedades de objetos de clase tipo custom menu para en un futuro usarla para crear nuevas pestañas
+
+---------------------------------------------------------------------------------------------------
+Cosas pendientes
+-Comportamiento configurar pagina e imprimir, verificar impriendo documento
+???
+-Terminar sistema de ventanas (comprobar el aumento del tamaño del richtext box cuando ampliamos la ventana de nuestra aplicación , Dock.Fill???)

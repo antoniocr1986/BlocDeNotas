@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BlocNotasWF
 {
-    public partial class Pestañas : Form
+    public partial class FormPestañas : Form
     {
-        public Pestañas()
+        public FormPestañas()
         {
             InitializeComponent();
         }

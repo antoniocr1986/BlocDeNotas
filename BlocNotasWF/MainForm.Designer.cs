@@ -136,7 +136,6 @@ namespace BlocNotasWF
             this.nuevaPestañaToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
             this.nuevaPestañaToolStripMenuItem.Size = new System.Drawing.Size(236, 22);
             this.nuevaPestañaToolStripMenuItem.Text = "Nueva pestaña";
-            this.nuevaPestañaToolStripMenuItem.Click += new System.EventHandler(this.nuevaPestañaToolStripMenuItem_Click);
             // 
             // nuevaVentanaToolStripMenuItem
             // 
@@ -307,7 +306,7 @@ namespace BlocNotasWF
             this.buscarToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.B)));
             this.buscarToolStripMenuItem.Size = new System.Drawing.Size(260, 22);
             this.buscarToolStripMenuItem.Text = "Buscar";
-            this.buscarToolStripMenuItem.Click += new System.EventHandler(this.BuscarToolStripMenuItem_Click);
+            this.buscarToolStripMenuItem.Click += new System.EventHandler(this.buscarToolStripMenuItem_Click_1);
             // 
             // seleccionarTodoToolStripMenuItem
             // 
