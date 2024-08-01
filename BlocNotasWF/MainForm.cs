@@ -616,11 +616,12 @@ namespace BlocNotasWF
             // Restaurar la posición del cursor
             richTextBox1.SelectionStart = posicionCursor;
 
-            CheckStatusStripLocation();
-            
+            //***A1
+            //***A1CheckStatuStripLocation();
         }
 
-        private void CheckStatusStripLocation()
+        //***A1
+        /*private void CheckStatusStripLocation()
         {
             // Obtener la ubicación y el tamaño del RichTextBox
             var richTextBoxRect = richTextBox1.Bounds;
@@ -636,7 +637,7 @@ namespace BlocNotasWF
 
             // Mostrar resultados
             MessageBox.Show($"StatusStrip dentro del RichTextBox: {isInsideRichTextBox}\nStatusStrip anclado a la parte inferior: {isDockedToBottom}");
-        }
+        }*/
 
         public void buscarToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -695,7 +696,8 @@ namespace BlocNotasWF
         {
             richTextBox1.WordWrap = !richTextBox1.WordWrap;
             ajusteDeLineaToolStripMenuItem.Checked = !ajusteDeLineaToolStripMenuItem.Checked;
-            //INTENTAR HACER VER QUE SE VEA LA SCROLLBAR HORIZONTAL
+
+            //***A1 INTENTAR HACER VER QUE SE VEA LA SCROLLBAR HORIZONTAL
              /* if (richTextBox1.WordWrap == false)
             {
                 richTextBox1.ScrollBars = RichTextBoxScrollBars.Both; // Mostrar barras de desplazamiento vertical y horizontal
