@@ -1,6 +1,6 @@
 ﻿namespace BlocNotasWF
 {
-    partial class Configuracion
+    partial class FormConfiguracion
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Configuracion));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormConfiguracion));
             this.labelApariencia = new System.Windows.Forms.Label();
             this.labelFormato = new System.Windows.Forms.Label();
             this.labelOrtografia = new System.Windows.Forms.Label();

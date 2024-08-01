@@ -33,6 +33,8 @@ namespace BlocNotasWF
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nuevaPestañaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nuevaVentanaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.abrirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.guardarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.guardarComoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -67,6 +69,7 @@ namespace BlocNotasWF
             this.cortarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.copiarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.pegarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.eliminarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.seleccionarTodoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.ortografiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.OrtografiaActivarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -85,9 +88,6 @@ namespace BlocNotasWF
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.pageSetupDialog1 = new System.Windows.Forms.PageSetupDialog();
             this.pictureBoxConfig = new System.Windows.Forms.PictureBox();
-            this.nuevaPestañaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nuevaVentanaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.eliminarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.contextMenuStripMain.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -127,6 +127,25 @@ namespace BlocNotasWF
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
             this.archivoToolStripMenuItem.Size = new System.Drawing.Size(68, 22);
             this.archivoToolStripMenuItem.Text = "Achivo";
+            // 
+            // nuevaPestañaToolStripMenuItem
+            // 
+            this.nuevaPestañaToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
+            this.nuevaPestañaToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.nuevaPestañaToolStripMenuItem.Name = "nuevaPestañaToolStripMenuItem";
+            this.nuevaPestañaToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
+            this.nuevaPestañaToolStripMenuItem.Size = new System.Drawing.Size(236, 22);
+            this.nuevaPestañaToolStripMenuItem.Text = "Nueva pestaña";
+            this.nuevaPestañaToolStripMenuItem.Click += new System.EventHandler(this.nuevaPestañaToolStripMenuItem_Click);
+            // 
+            // nuevaVentanaToolStripMenuItem
+            // 
+            this.nuevaVentanaToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
+            this.nuevaVentanaToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.nuevaVentanaToolStripMenuItem.Name = "nuevaVentanaToolStripMenuItem";
+            this.nuevaVentanaToolStripMenuItem.Size = new System.Drawing.Size(236, 22);
+            this.nuevaVentanaToolStripMenuItem.Text = "Nueva ventana";
+            this.nuevaVentanaToolStripMenuItem.Click += new System.EventHandler(this.nuevaVentanaToolStripMenuItem_Click);
             // 
             // abrirToolStripMenuItem
             // 
@@ -404,6 +423,7 @@ namespace BlocNotasWF
             this.richTextBox1.TabIndex = 1;
             this.richTextBox1.Text = "";
             this.richTextBox1.SelectionChanged += new System.EventHandler(this.richTextBox1_SelectionChanged);
+            this.richTextBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.richTextBox1_MouseClick);
             // 
             // contextMenuStripMain
             // 
@@ -416,13 +436,13 @@ namespace BlocNotasWF
             this.seleccionarTodoToolStripMenuItem1,
             this.ortografiaToolStripMenuItem});
             this.contextMenuStripMain.Name = "contextMenuStripMain";
-            this.contextMenuStripMain.Size = new System.Drawing.Size(181, 180);
+            this.contextMenuStripMain.Size = new System.Drawing.Size(173, 158);
             // 
             // deshacerToolStripMenuItem
             // 
             this.deshacerToolStripMenuItem.Name = "deshacerToolStripMenuItem";
             this.deshacerToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
-            this.deshacerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.deshacerToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.deshacerToolStripMenuItem.Text = "Deshacer";
             this.deshacerToolStripMenuItem.Click += new System.EventHandler(this.deshacerToolStripMenuItem_Click);
             // 
@@ -430,7 +450,7 @@ namespace BlocNotasWF
             // 
             this.cortarToolStripMenuItem1.Name = "cortarToolStripMenuItem1";
             this.cortarToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-            this.cortarToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.cortarToolStripMenuItem1.Size = new System.Drawing.Size(172, 22);
             this.cortarToolStripMenuItem1.Text = "Cortar";
             this.cortarToolStripMenuItem1.Click += new System.EventHandler(this.cortarToolStripMenuItem1_Click);
             // 
@@ -438,7 +458,7 @@ namespace BlocNotasWF
             // 
             this.copiarToolStripMenuItem1.Name = "copiarToolStripMenuItem1";
             this.copiarToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
-            this.copiarToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.copiarToolStripMenuItem1.Size = new System.Drawing.Size(172, 22);
             this.copiarToolStripMenuItem1.Text = "Copiar";
             this.copiarToolStripMenuItem1.Click += new System.EventHandler(this.copiarToolStripMenuItem1_Click);
             // 
@@ -446,14 +466,22 @@ namespace BlocNotasWF
             // 
             this.pegarToolStripMenuItem1.Name = "pegarToolStripMenuItem1";
             this.pegarToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
-            this.pegarToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.pegarToolStripMenuItem1.Size = new System.Drawing.Size(172, 22);
             this.pegarToolStripMenuItem1.Text = "Pegar";
             this.pegarToolStripMenuItem1.Click += new System.EventHandler(this.pegarToolStripMenuItem1_Click);
+            // 
+            // eliminarToolStripMenuItem1
+            // 
+            this.eliminarToolStripMenuItem1.Name = "eliminarToolStripMenuItem1";
+            this.eliminarToolStripMenuItem1.ShortcutKeys = System.Windows.Forms.Keys.Delete;
+            this.eliminarToolStripMenuItem1.Size = new System.Drawing.Size(172, 22);
+            this.eliminarToolStripMenuItem1.Text = "Eliminar";
+            this.eliminarToolStripMenuItem1.Click += new System.EventHandler(this.eliminarToolStripMenuItem1_Click);
             // 
             // seleccionarTodoToolStripMenuItem1
             // 
             this.seleccionarTodoToolStripMenuItem1.Name = "seleccionarTodoToolStripMenuItem1";
-            this.seleccionarTodoToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.seleccionarTodoToolStripMenuItem1.Size = new System.Drawing.Size(172, 22);
             this.seleccionarTodoToolStripMenuItem1.Text = "Seleccionar Todo";
             this.seleccionarTodoToolStripMenuItem1.Click += new System.EventHandler(this.seleccionarTodoToolStripMenuItem1_Click);
             // 
@@ -462,7 +490,7 @@ namespace BlocNotasWF
             this.ortografiaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.OrtografiaActivarToolStripMenuItem});
             this.ortografiaToolStripMenuItem.Name = "ortografiaToolStripMenuItem";
-            this.ortografiaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ortografiaToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.ortografiaToolStripMenuItem.Text = "Corregir ortografía";
             // 
             // OrtografiaActivarToolStripMenuItem
@@ -566,33 +594,6 @@ namespace BlocNotasWF
             this.pictureBoxConfig.TabIndex = 3;
             this.pictureBoxConfig.TabStop = false;
             this.pictureBoxConfig.Click += new System.EventHandler(this.pictureBoxConfig_Click);
-            // 
-            // nuevaPestañaToolStripMenuItem
-            // 
-            this.nuevaPestañaToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
-            this.nuevaPestañaToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.nuevaPestañaToolStripMenuItem.Name = "nuevaPestañaToolStripMenuItem";
-            this.nuevaPestañaToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.nuevaPestañaToolStripMenuItem.Size = new System.Drawing.Size(236, 22);
-            this.nuevaPestañaToolStripMenuItem.Text = "Nueva pestaña";
-            this.nuevaPestañaToolStripMenuItem.Click += new System.EventHandler(this.nuevaPestañaToolStripMenuItem_Click);
-            // 
-            // nuevaVentanaToolStripMenuItem
-            // 
-            this.nuevaVentanaToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
-            this.nuevaVentanaToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.nuevaVentanaToolStripMenuItem.Name = "nuevaVentanaToolStripMenuItem";
-            this.nuevaVentanaToolStripMenuItem.Size = new System.Drawing.Size(236, 22);
-            this.nuevaVentanaToolStripMenuItem.Text = "Nueva ventana";
-            this.nuevaVentanaToolStripMenuItem.Click += new System.EventHandler(this.nuevaVentanaToolStripMenuItem_Click);
-            // 
-            // eliminarToolStripMenuItem1
-            // 
-            this.eliminarToolStripMenuItem1.Name = "eliminarToolStripMenuItem1";
-            this.eliminarToolStripMenuItem1.ShortcutKeys = System.Windows.Forms.Keys.Delete;
-            this.eliminarToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.eliminarToolStripMenuItem1.Text = "Eliminar";
-            this.eliminarToolStripMenuItem1.Click += new System.EventHandler(this.eliminarToolStripMenuItem1_Click);
             // 
             // MainForm
             // 

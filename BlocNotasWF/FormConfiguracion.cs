@@ -11,11 +11,11 @@ using System.Windows.Forms;
 namespace BlocNotasWF
    
 {
-    public partial class Configuracion : Form
+    public partial class FormConfiguracion : Form
     {
         MainForm mainform;
 
-        public Configuracion(MainForm ventanaMain)
+        public FormConfiguracion(MainForm ventanaMain)
         {
             InitializeComponent();
             mainform = ventanaMain;

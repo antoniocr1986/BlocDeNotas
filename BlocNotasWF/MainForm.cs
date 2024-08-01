@@ -18,7 +18,7 @@ namespace BlocNotasWF
     public partial class MainForm : Form
     {
         private string archivoActual ="nuevoArchivo.txt";
-        private Configuracion configuracion = null;
+        private FormConfiguracion configuracion = null;
         private string tituloVentana = "Bloc de notas: principal";
         int openFormCount = System.Windows.Forms.Application.OpenForms.Count;
 
@@ -343,7 +343,7 @@ namespace BlocNotasWF
                     if (index == -1)
                         break;
 
-                    richTextBox1.SelectionBackColor = Color.Yellow;
+                    richTextBox1.SelectionBackColor = Color.SteelBlue;
                     index += textoBuscado.Length;
                 }
             }
@@ -354,7 +354,14 @@ namespace BlocNotasWF
             DateTime fechaHoraActual = DateTime.Now;
             string fechaHoraString = fechaHoraActual.ToString("yyyy-MM-dd HH:mm:ss");
 
-            richTextBox1.Text = fechaHoraString + "\n" + richTextBox1.Text;
+            // Obtener la posición actual del cursor
+            int posicionCursor = richTextBox1.SelectionStart;
+
+            // Insertar el texto en la posición del cursor
+            richTextBox1.Text = richTextBox1.Text.Insert(posicionCursor, fechaHoraString);
+
+            // Restaurar la posición del cursor
+            richTextBox1.SelectionStart = posicionCursor + fechaHoraString.Length;
         }
 
         public void FuenteToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -476,7 +483,7 @@ namespace BlocNotasWF
         {
             if (configuracion == null || configuracion.IsDisposed)
             {
-                configuracion = new Configuracion(this);
+                configuracion = new FormConfiguracion(this);
 
                 configuracion.Show();
             }
@@ -596,6 +603,22 @@ namespace BlocNotasWF
             mainform2.Show();
         }
 
-       
+        private void richTextBox1_MouseClick(object sender, MouseEventArgs e)
+        {
+            //Guardar posicion actual en el richTextBox
+            int posicionCursor = richTextBox1.SelectionStart;
+
+            // Seleccionar todo el texto en el RichTextBox
+            richTextBox1.SelectAll();
+
+            // Establecer el color de fondo del texto seleccionado
+            richTextBox1.SelectionBackColor = Color.FromArgb(44, 44, 44);
+
+            // Deseleccionar el texto para evitar que quede resaltado
+            richTextBox1.DeselectAll();
+
+            // Restaurar la posición del cursor
+            richTextBox1.SelectionStart = posicionCursor;
+        }
     }  
 }
