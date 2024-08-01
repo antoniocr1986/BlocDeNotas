@@ -63,6 +63,7 @@ namespace BlocNotasWF
             this.reducirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.restablecerZoomOriginalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.barraDeEstadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ajusteDeLineaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.contextMenuStripMain = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.deshacerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -104,7 +105,7 @@ namespace BlocNotasWF
             this.verToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(544, 26);
+            this.menuStrip1.Size = new System.Drawing.Size(546, 26);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -356,7 +357,8 @@ namespace BlocNotasWF
             this.verToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
             this.verToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.zoomToolStripMenuItem,
-            this.barraDeEstadoToolStripMenuItem});
+            this.barraDeEstadoToolStripMenuItem,
+            this.ajusteDeLineaToolStripMenuItem});
             this.verToolStripMenuItem.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.verToolStripMenuItem.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.verToolStripMenuItem.Name = "verToolStripMenuItem";
@@ -407,6 +409,17 @@ namespace BlocNotasWF
             this.barraDeEstadoToolStripMenuItem.Text = "Barra de estado";
             this.barraDeEstadoToolStripMenuItem.Click += new System.EventHandler(this.BarraDeEstadoToolStripMenuItem_Click);
             // 
+            // ajusteDeLineaToolStripMenuItem
+            // 
+            this.ajusteDeLineaToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
+            this.ajusteDeLineaToolStripMenuItem.Checked = true;
+            this.ajusteDeLineaToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.ajusteDeLineaToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.ajusteDeLineaToolStripMenuItem.Name = "ajusteDeLineaToolStripMenuItem";
+            this.ajusteDeLineaToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
+            this.ajusteDeLineaToolStripMenuItem.Text = "Ajuste de línea";
+            this.ajusteDeLineaToolStripMenuItem.Click += new System.EventHandler(this.ajusteDeLineaToolStripMenuItem_Click);
+            // 
             // richTextBox1
             // 
             this.richTextBox1.AcceptsTab = true;
@@ -418,7 +431,7 @@ namespace BlocNotasWF
             this.richTextBox1.ForeColor = System.Drawing.SystemColors.Window;
             this.richTextBox1.Location = new System.Drawing.Point(0, 26);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(544, 285);
+            this.richTextBox1.Size = new System.Drawing.Size(546, 338);
             this.richTextBox1.TabIndex = 1;
             this.richTextBox1.Text = "";
             this.richTextBox1.SelectionChanged += new System.EventHandler(this.richTextBox1_SelectionChanged);
@@ -516,10 +529,10 @@ namespace BlocNotasWF
             this.toolStripStatusLabelZoom,
             this.toolStripStatusSpacer3,
             this.toolStripStatusLabelCodification});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 289);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 342);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.ShowItemToolTips = true;
-            this.statusStrip1.Size = new System.Drawing.Size(544, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(546, 22);
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -587,7 +600,7 @@ namespace BlocNotasWF
             this.pictureBoxConfig.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBoxConfig.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
             this.pictureBoxConfig.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxConfig.Image")));
-            this.pictureBoxConfig.Location = new System.Drawing.Point(505, 0);
+            this.pictureBoxConfig.Location = new System.Drawing.Point(507, 0);
             this.pictureBoxConfig.Name = "pictureBoxConfig";
             this.pictureBoxConfig.Size = new System.Drawing.Size(27, 26);
             this.pictureBoxConfig.TabIndex = 3;
@@ -599,7 +612,7 @@ namespace BlocNotasWF
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(544, 311);
+            this.ClientSize = new System.Drawing.Size(546, 364);
             this.Controls.Add(this.pictureBoxConfig);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.richTextBox1);
@@ -680,6 +693,7 @@ namespace BlocNotasWF
         private System.Windows.Forms.ToolStripMenuItem nuevaPestañaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nuevaVentanaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem ajusteDeLineaToolStripMenuItem;
     }
 }
 

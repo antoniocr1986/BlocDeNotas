@@ -24,7 +24,6 @@ namespace BlocNotasWF
 
         private void Configuracion_Load(object sender, EventArgs e)
         {
-
         }
 
         #region mostrarContextMenuStrips

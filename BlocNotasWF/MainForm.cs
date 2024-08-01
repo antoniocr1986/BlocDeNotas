@@ -71,7 +71,8 @@ namespace BlocNotasWF
         {
             richTextBox1.SelectionIndent = 10; // Establecer el margen izquierdo en 10 píxeles
             richTextBox1.SelectionRightIndent = 10; // Establecer el margen derecho en 10 píxeles    
-
+            //MODIFICAR ALTO richTextBox para intentar que se vea barra horizontal
+            //richTextBox1.Height = this.ClientSize.Height - statusStrip1.Height - 26; // Espacio para StatusStrip + margen de 20 píxeles
         }
 
         private Encoding TryDetectEncoding(string text)
@@ -614,6 +615,27 @@ namespace BlocNotasWF
 
             // Restaurar la posición del cursor
             richTextBox1.SelectionStart = posicionCursor;
+
+            CheckStatusStripLocation();
+            
+        }
+
+        private void CheckStatusStripLocation()
+        {
+            // Obtener la ubicación y el tamaño del RichTextBox
+            var richTextBoxRect = richTextBox1.Bounds;
+
+            // Obtener la ubicación y el tamaño del StatusStrip
+            var statusStripRect = statusStrip1.Bounds;
+
+            // Verificar si el StatusStrip está dentro del RichTextBox
+            bool isInsideRichTextBox = richTextBoxRect.IntersectsWith(statusStripRect);
+
+            // Verificar si el StatusStrip está en la parte inferior del formulario
+            bool isDockedToBottom = statusStrip1.Dock == DockStyle.Bottom;
+
+            // Mostrar resultados
+            MessageBox.Show($"StatusStrip dentro del RichTextBox: {isInsideRichTextBox}\nStatusStrip anclado a la parte inferior: {isDockedToBottom}");
         }
 
         public void buscarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -667,6 +689,19 @@ namespace BlocNotasWF
                     }
                 }
             }
+        }
+
+        private void ajusteDeLineaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox1.WordWrap = !richTextBox1.WordWrap;
+            ajusteDeLineaToolStripMenuItem.Checked = !ajusteDeLineaToolStripMenuItem.Checked;
+            //INTENTAR HACER VER QUE SE VEA LA SCROLLBAR HORIZONTAL
+             /* if (richTextBox1.WordWrap == false)
+            {
+                richTextBox1.ScrollBars = RichTextBoxScrollBars.Both; // Mostrar barras de desplazamiento vertical y horizontal
+            }
+            else
+                richTextBox1.ScrollBars = RichTextBoxScrollBars.Vertical;*/
         }
     }
 }
