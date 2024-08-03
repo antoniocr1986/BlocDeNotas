@@ -56,6 +56,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomPrintDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomPrintDialog.Designer.cs">
+      <DependentUpon>CustomPrintDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormConfiguracion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +87,7 @@
     <Compile Include="FormPestañas.Designer.cs">
       <DependentUpon>FormPestañas.cs</DependentUpon>
     </Compile>
+    <Compile Include="PrintExample.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ThemeColors.cs" />

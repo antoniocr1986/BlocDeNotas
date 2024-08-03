@@ -22,6 +22,9 @@ namespace BlocNotasWF
         private string tituloVentana = "Bloc de notas: principal";
         int openFormCount = System.Windows.Forms.Application.OpenForms.Count;
 
+        //***A2
+        private Button buttonPrintPreview;
+
         public MainForm()
         {
             InitializeComponent();
@@ -65,6 +68,10 @@ namespace BlocNotasWF
 
             // Configura el ContextMenuStrip para el formulario
             this.ContextMenuStrip = contextMenuStripMain;
+
+            //***A2 Esto me crea el boton con el acceso a la vista previa de impresion en el MainForm
+            imprimirToolStripMenuItem.Click += new EventHandler(ButtonPrintPreview_Click);
+            this.Controls.Add(buttonPrintPreview);
         }
 
         public void aplicarMargenes()
@@ -99,7 +106,6 @@ namespace BlocNotasWF
                     }
                 }
             }
-
             return null; // No obtenemos codificacion
         }
 
@@ -247,7 +253,10 @@ namespace BlocNotasWF
         #region metodos imprimir
         public void ImprimirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DialogResult result = printDialog1.ShowDialog();
+            /*CustomPrintDialog printPreviewForm = new CustomPrintDialog(richTextBox1);
+            printPreviewForm.ShowDialog();*/
+
+            /*DialogResult result = printDialog1.ShowDialog();
 
             if (result == DialogResult.OK)
             {
@@ -255,7 +264,7 @@ namespace BlocNotasWF
                 printDocument.PrintPage += new PrintPageEventHandler(PrintText);
                 printDocument.PrinterSettings = printDialog1.PrinterSettings;
                 printDocument.Print();
-            }
+            }*/
         }
 
         public void PrintText(object sender, PrintPageEventArgs e)
@@ -268,6 +277,14 @@ namespace BlocNotasWF
             RectangleF bounds = e.MarginBounds;
             e.Graphics.DrawString(textToPrint, font, brush, bounds, StringFormat.GenericTypographic);
         }
+
+        //*** A2 vista previa
+        private void ButtonPrintPreview_Click(object sender, EventArgs e)
+        {
+            PrintExample printExample = new PrintExample(richTextBox1);
+            printExample.ShowPrintPreview();
+        }
+
         #endregion
 
         #region metodos seleccionar todo, cortar, copiar y pegar
