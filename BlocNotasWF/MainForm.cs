@@ -24,6 +24,7 @@ namespace BlocNotasWF
 
         //***A2
         private Button buttonPrintPreview;
+        PrintExample printExample;
 
         public MainForm()
         {
@@ -242,11 +243,16 @@ namespace BlocNotasWF
         {
             if (pageSetupDialog1.ShowDialog() == DialogResult.OK)
             {
-                //METODO A COMPLETAR AUN
-                /* Podremos modificar la orientación, el tamaño del papel y los márgenes con:
-                 pageSetupDialog.Document.DefaultPageSettings.Landscape
-                 pageSetupDialog.Document.DefaultPageSettings.PaperSize
-                 pageSetupDialog.Document.DefaultPageSettings.Margins*/
+                //Podremos modificar la orientación, el tamaño del papel y los márgenes con:
+                if (printExample == null)
+                {
+                    printExample = new PrintExample(richTextBox1);
+                }
+                printExample.printDocument.DefaultPageSettings.Landscape= pageSetupDialog1.PageSettings.Landscape;
+                printExample.printDocument.DefaultPageSettings.PaperSize = pageSetupDialog1.PageSettings.PaperSize;
+                printExample.printDocument.DefaultPageSettings.Margins = pageSetupDialog1.PageSettings.Margins;
+                
+                //pageSettings = pageSetupDialog1.PageSettings;
             }
         }
 
@@ -281,7 +287,10 @@ namespace BlocNotasWF
         //*** A2 vista previa
         private void ButtonPrintPreview_Click(object sender, EventArgs e)
         {
-            PrintExample printExample = new PrintExample(richTextBox1);
+            if (printExample == null)
+            {
+                printExample = new PrintExample(richTextBox1);
+            }         
             printExample.ShowPrintPreview();
         }
 

@@ -12,6 +12,8 @@ namespace BlocNotasWF
         private RichTextBox richTextBox;
         public PrintDocument printDocument { get; private set; }
         private PrintPreviewDialog printPreviewDialog;
+        private PageSettings pageSettings;
+        private PageSetupDialog pageSetupDialog;
         System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormBuscar));
 
         public PrintExample(RichTextBox rtb)
@@ -19,6 +21,12 @@ namespace BlocNotasWF
             richTextBox = rtb;
             printDocument = new PrintDocument();
             printDocument.PrintPage += new PrintPageEventHandler(PrintDocument_PrintPage);
+
+            // Inicializar PageSettings y PageSetupDialog
+            pageSettings = new PageSettings();
+            pageSetupDialog = new PageSetupDialog();
+            pageSetupDialog.PageSettings = pageSettings;
+            pageSetupDialog.Document = printDocument;
         }
 
         private void PrintDocument_PrintPage(object sender, PrintPageEventArgs e)
@@ -41,6 +49,20 @@ namespace BlocNotasWF
             printPreviewDialog.Top = (Screen.PrimaryScreen.WorkingArea.Height - printPreviewDialog.Height) / 2;
 
             printPreviewDialog.ShowDialog();
+        }
+
+        public void ConfigurarPágina()
+        {
+            if (pageSetupDialog.ShowDialog() == DialogResult.OK)
+            {
+                // Actualizar las configuraciones de la página del PrintDocument
+                printDocument.DefaultPageSettings.Landscape = pageSetupDialog.PageSettings.Landscape;
+                printDocument.DefaultPageSettings.PaperSize = pageSetupDialog.PageSettings.PaperSize;
+                printDocument.DefaultPageSettings.Margins = pageSetupDialog.PageSettings.Margins;
+
+                // Opcional: Guardar la configuración si necesitas reutilizarla
+                pageSettings = pageSetupDialog.PageSettings;
+            }
         }
     }
 }
