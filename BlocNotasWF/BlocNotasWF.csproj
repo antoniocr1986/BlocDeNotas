@@ -56,11 +56,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomPrintDialog.cs">
+    <Compile Include="FormCustomPrintDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CustomPrintDialog.Designer.cs">
-      <DependentUpon>CustomPrintDialog.cs</DependentUpon>
+    <Compile Include="FormCustomPrintDialog.Designer.cs">
+      <DependentUpon>FormCustomPrintDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="FormConfiguracion.cs">
       <SubType>Form</SubType>

@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace BlocNotasWF
 {
-    public partial class CustomPrintDialog : Form
+    public partial class FormCustomPrintDialog : Form
     {
         private RichTextBox richTextBox;
         private PrintDocument printDocument;
@@ -19,7 +19,7 @@ namespace BlocNotasWF
         private Button printButton;
         private Button printerSettingsButton;
 
-        public CustomPrintDialog(RichTextBox richTextBox1)
+        public FormCustomPrintDialog(RichTextBox richTextBox1)
         {
             this.richTextBox = richTextBox1;
 

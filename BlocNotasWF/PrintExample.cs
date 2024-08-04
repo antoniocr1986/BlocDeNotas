@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BlocNotasWF.Properties;
+using System;
 using System.Drawing;
 using System.Drawing.Printing;
 using System.Windows.Forms;
@@ -11,13 +12,13 @@ namespace BlocNotasWF
         private RichTextBox richTextBox;
         public PrintDocument printDocument { get; private set; }
         private PrintPreviewDialog printPreviewDialog;
+        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormBuscar));
 
         public PrintExample(RichTextBox rtb)
         {
             richTextBox = rtb;
             printDocument = new PrintDocument();
             printDocument.PrintPage += new PrintPageEventHandler(PrintDocument_PrintPage);
-            
         }
 
         private void PrintDocument_PrintPage(object sender, PrintPageEventArgs e)
@@ -31,7 +32,9 @@ namespace BlocNotasWF
             {
                 Document = printDocument,
                 Width = 500,  // Ancho deseado
-                Height = 800  // Altura deseada
+                Height = 800,  // Altura deseada
+                Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")))
+
             };
             printPreviewDialog.StartPosition = FormStartPosition.Manual;
             printPreviewDialog.Left = (Screen.PrimaryScreen.WorkingArea.Width - printPreviewDialog.Width) / 2;

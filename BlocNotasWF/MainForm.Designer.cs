@@ -379,6 +379,8 @@ namespace BlocNotasWF
             // 
             // aumentarToolStripMenuItem
             // 
+            this.aumentarToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
+            this.aumentarToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.aumentarToolStripMenuItem.Name = "aumentarToolStripMenuItem";
             this.aumentarToolStripMenuItem.Size = new System.Drawing.Size(276, 22);
             this.aumentarToolStripMenuItem.Text = "Aumentar";
@@ -386,6 +388,8 @@ namespace BlocNotasWF
             // 
             // reducirToolStripMenuItem
             // 
+            this.reducirToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
+            this.reducirToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.reducirToolStripMenuItem.Name = "reducirToolStripMenuItem";
             this.reducirToolStripMenuItem.Size = new System.Drawing.Size(276, 22);
             this.reducirToolStripMenuItem.Text = "Reducir";
@@ -393,6 +397,8 @@ namespace BlocNotasWF
             // 
             // restablecerZoomOriginalToolStripMenuItem
             // 
+            this.restablecerZoomOriginalToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
+            this.restablecerZoomOriginalToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.restablecerZoomOriginalToolStripMenuItem.Name = "restablecerZoomOriginalToolStripMenuItem";
             this.restablecerZoomOriginalToolStripMenuItem.Size = new System.Drawing.Size(276, 22);
             this.restablecerZoomOriginalToolStripMenuItem.Text = "Restablecer zoom original";

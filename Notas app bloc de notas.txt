@@ -6,14 +6,18 @@ FormBuscar.cs-> Ventana buscar texto16:16 01/08/2024
 CLASES
 Program.cs-> código de inicio o main de la aplicación
 ThemeColors.cs-> Clase con colores predefenidos en variables publicas
+PrintExample.cs-> Clase para crear ventana de impresión personalizada, en tamaño, posición, y cojiendo como parámetro el richTextBox del MainForm.
 
 ----------------------------------------------------------------------------------------------------
 CLASES SIN USO O CON USO POR IMPLEMENTAR
-FormPestañas.cs-> Clase sin uso en la cual comenzamos los primeros pasos para implementar el uso de pestañas en la aplicacion
+FormCustomPrintDialog -> Form para intentar crear la vista presonalizada de impresión con la viste previa en ella y algunos cambios mas
+
+FormPestañas.cs-> Clase sin uso en la cual comenzamos los primeros pasos para implementar el uso de pestañas en la aplicación
+
 CustomMenuRenderer.cs-> Clase actualmente sin uso pero su objetivo era contener propiedades de objetos de clase tipo custom menu para en un futuro usarla para crear nuevas pestañas
 
 ---------------------------------------------------------------------------------------------------
 Cosas pendientes
--Comportamiento configurar pagina e imprimir, verificar impriendo documento
-???
+-Estetica imprimir revisar y mejorar//***A2
+
 -Terminar sistema de ventanas (comprobar el aumento del tamaño del richtext box cuando ampliamos la ventana de nuestra aplicación , Dock.Fill???)

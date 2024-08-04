@@ -1,6 +1,6 @@
 ﻿namespace BlocNotasWF
 {
-    partial class CustomPrintDialog
+    partial class FormCustomPrintDialog
     {
         /// <summary>
         /// Required designer variable.
