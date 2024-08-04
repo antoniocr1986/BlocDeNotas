@@ -69,10 +69,6 @@ namespace BlocNotasWF
 
             // Configura el ContextMenuStrip para el formulario
             this.ContextMenuStrip = contextMenuStripMain;
-
-            //***A2 Esto me crea el boton con el acceso a la vista previa de impresion en el MainForm
-            imprimirToolStripMenuItem.Click += new EventHandler(ButtonPrintPreview_Click);
-            this.Controls.Add(buttonPrintPreview);
         }
 
         public void aplicarMargenes()
@@ -259,18 +255,11 @@ namespace BlocNotasWF
         #region metodos imprimir
         public void ImprimirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            /*CustomPrintDialog printPreviewForm = new CustomPrintDialog(richTextBox1);
-            printPreviewForm.ShowDialog();*/
-
-            /*DialogResult result = printDialog1.ShowDialog();
-
-            if (result == DialogResult.OK)
+            if (printExample == null)
             {
-                PrintDocument printDocument = new PrintDocument();
-                printDocument.PrintPage += new PrintPageEventHandler(PrintText);
-                printDocument.PrinterSettings = printDialog1.PrinterSettings;
-                printDocument.Print();
-            }*/
+                printExample = new PrintExample(richTextBox1);
+            }
+            printExample.ShowPrintPreview();
         }
 
         public void PrintText(object sender, PrintPageEventArgs e)
